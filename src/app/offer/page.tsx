@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "Условия продажи и доставки цветов Цветочной Базы Дубравиных: оформление заказа, оплата, замена состава, возврат.",
   alternates: { canonical: "/offer" },
+  // Документ не прошёл юридическую проверку и не содержит реквизитов:
+  // до этого он не должен попадать в поиск.
+  robots: { index: false, follow: false },
 };
 
 export default function OfferPage() {
@@ -20,7 +23,7 @@ export default function OfferPage() {
       />
 
       <Prose>
-        <p className="rounded-[var(--radius-card)] border border-red-brand/30 bg-red-brand/5 p-4 text-sm">
+        <p className="rounded-[var(--radius-card)] border border-burgundy/30 bg-burgundy/5 p-4 text-sm">
           {LEGAL_NOTE} Реквизиты продавца, порядок возврата денежных средств и
           сроки будут внесены после согласования с владельцем.
         </p>

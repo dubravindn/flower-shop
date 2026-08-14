@@ -91,7 +91,7 @@ export function MobileMenu() {
             role="dialog"
             aria-modal="true"
             aria-label="Меню сайта"
-            className="reveal absolute inset-y-0 right-0 flex w-[min(22rem,88vw)] flex-col overflow-y-auto bg-champagne-paper shadow-xl"
+            className="reveal absolute inset-y-0 right-0 flex w-[min(22rem,88vw)] flex-col overflow-y-auto bg-paper shadow-xl"
           >
             <div className="flex items-center justify-between border-b border-graphite/12 px-5 py-4">
               <span className="flex items-center gap-3">
@@ -126,7 +126,7 @@ export function MobileMenu() {
                     >
                       <span className="font-display text-xl">{item.label}</span>
                       {item.hint && (
-                        <span className="mt-0.5 block text-sm text-graphite-muted">
+                        <span className="mt-0.5 block text-sm text-ink-muted">
                           {item.hint}
                         </span>
                       )}
@@ -139,7 +139,7 @@ export function MobileMenu() {
             <div className="border-t border-graphite/12 px-5 py-5">
               <a
                 href={COMPANY.phone.href}
-                className="mb-3 block font-display text-2xl text-red-brand"
+                className="mb-3 block font-display text-2xl text-burgundy"
               >
                 {COMPANY.phone.display}
               </a>

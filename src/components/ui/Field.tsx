@@ -5,12 +5,12 @@ import { useId } from "react";
 import { cn } from "@/lib/cn";
 
 const CONTROL = cn(
-  "w-full min-h-11 rounded-[var(--radius-button)] border bg-champagne-paper",
+  "w-full min-h-11 rounded-[var(--radius-button)] border bg-paper",
   "border-graphite/22 px-3.5 py-2.5 text-base text-graphite",
-  "placeholder:text-graphite-muted/60",
-  "transition-colors focus:border-red-brand focus:outline-none",
+  "placeholder:text-ink-muted/60",
+  "transition-colors focus:border-burgundy focus:outline-none",
   "disabled:cursor-not-allowed disabled:opacity-55",
-  "aria-[invalid=true]:border-red-brand aria-[invalid=true]:bg-red-brand/5",
+  "aria-[invalid=true]:border-burgundy aria-[invalid=true]:bg-burgundy/5",
 );
 
 function Label({
@@ -29,7 +29,7 @@ function Label({
     >
       {children}
       {required && (
-        <span aria-hidden="true" className="ml-0.5 text-red-brand">
+        <span aria-hidden="true" className="ml-0.5 text-burgundy">
           *
         </span>
       )}
@@ -40,14 +40,14 @@ function Label({
 function Hint({ id, error, hint }: { id: string; error?: string; hint?: string }) {
   if (error) {
     return (
-      <p id={id} role="alert" className="mt-1.5 text-sm font-medium text-red-dark">
+      <p id={id} role="alert" className="mt-1.5 text-sm font-medium text-burgundy-dark">
         {error}
       </p>
     );
   }
   if (hint) {
     return (
-      <p id={id} className="mt-1.5 text-sm text-graphite-muted">
+      <p id={id} className="mt-1.5 text-sm text-ink-muted">
         {hint}
       </p>
     );

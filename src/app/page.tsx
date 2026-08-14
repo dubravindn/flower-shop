@@ -9,14 +9,15 @@ import { Works } from "@/components/home/Works";
 import { Stores } from "@/components/home/Stores";
 import { Reviews } from "@/components/home/Reviews";
 import { FinalCta } from "@/components/home/FinalCta";
+import { DatesTeaser } from "@/components/home/DatesTeaser";
 import { FoundersSection } from "@/components/brand/FoundersSection";
 import { FOUNDERS_CONTENT } from "@/config/founders";
 import { COMPANY, STORES } from "@/config/company";
 
 export const metadata: Metadata = {
-  title: `${COMPANY.name} — цветы оптом и в розницу в Кирове`,
+  title: `${COMPANY.name} — доставка цветов в Кирове за 2 часа`,
   description:
-    "Свежие цветы каждый день: букеты, композиции и доставка по Кирову. Оптовые поставки цветочным магазинам и флористам с собственной базы.",
+    "Цветочная База Дубравиных — цветочный магазин в Кирове. Авторские букеты, доставка за 2 часа, фото букета перед отправкой. Заказ через WhatsApp.",
   alternates: { canonical: "/" },
 };
 
@@ -90,7 +91,10 @@ export default function HomePage() {
         caption="Братья Дубравины, владельцы базы"
       />
 
-      {/* 11. Реальные работы */}
+      {/* 11. Тизер важных дат */}
+      <DatesTeaser />
+
+      {/* 12. Реальные работы */}
       <Works />
 
       {/* 12. Магазины */}

@@ -96,29 +96,29 @@ export default async function ProductPage({
           )}
 
           <p className="font-display text-3xl">{formatFromPrice(product.variants)}</p>
-          <p className="mt-1 text-sm text-graphite-muted">
+          <p className="mt-1 text-sm text-ink-muted">
             Точную стоимость флорист подтверждает при оформлении — она зависит от
             свежей поставки.
           </p>
 
           <dl className="mt-8 space-y-4 border-t border-graphite/12 pt-6">
             <div>
-              <dt className="font-sans text-xs font-semibold tracking-[0.12em] text-graphite-muted uppercase">
+              <dt className="font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
                 Состав
               </dt>
               <dd className="mt-1">{product.composition}</dd>
             </div>
             <div>
-              <dt className="font-sans text-xs font-semibold tracking-[0.12em] text-graphite-muted uppercase">
+              <dt className="font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
                 Цветовая гамма
               </dt>
               <dd className="mt-1">{product.palette.join(", ")}</dd>
             </div>
             <div>
-              <dt className="font-sans text-xs font-semibold tracking-[0.12em] text-graphite-muted uppercase">
+              <dt className="font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
                 Сезонная замена
               </dt>
-              <dd className="mt-1 text-graphite-muted">
+              <dd className="mt-1 text-ink-muted">
                 Если какого-то цветка нет в свежей поставке, флорист заранее
                 предложит замену того же стиля и стоимости.
               </dd>
@@ -134,16 +134,16 @@ export default async function ProductPage({
             </ButtonLink>
           </div>
 
-          <div className="mt-8 rounded-[var(--radius-card)] border border-graphite/12 bg-champagne-paper-deep p-5">
+          <div className="mt-8 rounded-[var(--radius-card)] border border-graphite/12 bg-champagne-light p-5">
             <h2 className="font-sans text-base font-semibold">Как ухаживать</h2>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-[0.9375rem] text-graphite-muted">
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-[0.9375rem] text-ink-muted">
               <li>Подрежьте стебли под углом и смените воду.</li>
               <li>Держите букет вдали от батарей и прямого солнца.</li>
               <li>Меняйте воду каждый день, подрезайте стебли раз в два дня.</li>
             </ul>
             <Link
               href="/care"
-              className="mt-3 inline-block text-sm font-semibold text-red-brand underline-offset-4 hover:underline"
+              className="mt-3 inline-block text-sm font-semibold text-burgundy underline-offset-4 hover:underline"
             >
               Подробнее об уходе →
             </Link>
@@ -152,7 +152,7 @@ export default async function ProductPage({
       </div>
 
       {similar.length > 0 && (
-        <section className="border-t border-graphite/12 bg-champagne-paper-deep py-12 md:py-16">
+        <section className="border-t border-graphite/12 bg-champagne-light py-12 md:py-16">
           <div className="container-page">
             <h2 className="mb-8 text-[clamp(1.5rem,3.5vw,2.25rem)]">Похожие букеты</h2>
             <ul className="grid grid-cols-2 gap-4 lg:grid-cols-4">

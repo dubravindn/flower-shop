@@ -26,8 +26,8 @@ export function CatalogView({ category }: { category?: string }) {
     cn(
       "inline-flex min-h-11 items-center rounded-[var(--radius-button)] border px-4 text-sm font-semibold transition-colors",
       active
-        ? "border-red-brand bg-red-brand text-champagne-paper"
-        : "border-graphite/20 text-graphite hover:border-red-brand hover:text-red-brand",
+        ? "border-burgundy bg-burgundy text-paper"
+        : "border-graphite/20 text-graphite hover:border-burgundy hover:text-burgundy",
     );
 
   const withOccasion = (slug: string) =>
@@ -37,7 +37,7 @@ export function CatalogView({ category }: { category?: string }) {
     <div className="container-page py-10 md:py-14">
       {/* Фильтр по категориям */}
       <div className="mb-4">
-        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-graphite-muted uppercase">
+        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
           Категория
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -58,7 +58,7 @@ export function CatalogView({ category }: { category?: string }) {
 
       {/* Фильтр по поводу */}
       <div className="mb-8">
-        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-graphite-muted uppercase">
+        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
           Повод
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -80,7 +80,7 @@ export function CatalogView({ category }: { category?: string }) {
         </div>
       </div>
 
-      <p className="mb-6 text-sm text-graphite-muted">
+      <p className="mb-6 text-sm text-ink-muted">
         Показано работ: {products.length}
       </p>
 

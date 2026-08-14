@@ -11,9 +11,9 @@ const BADGE_LABELS: Record<ProductBadge, string> = {
 };
 
 const BADGE_TONES: Record<ProductBadge, string> = {
-  hit: "bg-red-brand text-champagne-paper",
-  new: "bg-champagne-foil text-graphite",
-  today: "bg-graphite text-champagne-paper",
+  hit: "bg-burgundy text-paper",
+  new: "bg-gold-light text-graphite",
+  today: "bg-graphite text-paper",
 };
 
 export function Badge({
@@ -84,12 +84,12 @@ function StateShell({
       className={cn(
         "flex flex-col items-center gap-3 rounded-[var(--radius-card)] px-6 py-12 text-center",
         tone === "error"
-          ? "border border-red-brand/30 bg-red-brand/5"
-          : "border border-graphite/12 bg-champagne-paper-deep/60",
+          ? "border border-burgundy/30 bg-burgundy/5"
+          : "border border-graphite/12 bg-champagne-light/60",
       )}
     >
       <p className="font-display text-2xl">{title}</p>
-      {text && <p className="max-w-[46ch] text-graphite-muted">{text}</p>}
+      {text && <p className="max-w-[46ch] text-ink-muted">{text}</p>}
       {action && <div className="mt-2">{action}</div>}
     </div>
   );

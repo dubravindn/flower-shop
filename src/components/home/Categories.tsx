@@ -33,7 +33,7 @@ export function Categories() {
           <li key={category.slug}>
             <Link
               href={`/catalog/${category.slug}`}
-              className="group relative flex aspect-3/2 flex-col justify-end overflow-hidden rounded-[var(--radius-card)] border border-graphite/12 p-5 text-champagne-paper"
+              className="group relative flex aspect-3/2 flex-col justify-end overflow-hidden rounded-[var(--radius-card)] border border-graphite/12 p-5 text-paper"
             >
               <Img
                 src={category.image}
@@ -81,7 +81,7 @@ export function Occasions() {
           <li key={occasion.slug}>
             <Link
               href={`/catalog?occasion=${occasion.slug}`}
-              className="group flex min-h-16 items-center justify-between gap-4 rounded-[var(--radius-card)] border border-graphite/20 bg-champagne-paper px-5 py-4 transition-colors hover:border-red-brand"
+              className="group flex min-h-16 items-center justify-between gap-4 rounded-[var(--radius-card)] border border-graphite/20 bg-paper px-5 py-4 transition-colors hover:border-burgundy"
             >
               <span className="font-display text-xl">{occasion.title}</span>
               <ArrowIcon />

@@ -20,9 +20,9 @@ export interface FoundersSectionProps {
 }
 
 const TONES = {
-  red: "bg-red-brand text-champagne-paper on-red",
-  paper: "bg-champagne-paper-deep text-graphite",
-  graphite: "bg-graphite text-champagne-paper on-graphite",
+  red: "bg-burgundy text-paper on-dark",
+  paper: "bg-champagne-light text-graphite",
+  graphite: "bg-graphite text-paper on-dark",
 } as const;
 
 /**
@@ -87,7 +87,7 @@ export function FoundersSection({
 
           {/* Фотография */}
           <figure className="m-0">
-            <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-champagne-foil/35">
+            <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-gold-light/35">
               <Img
                 src={image.src}
                 alt={image.alt}

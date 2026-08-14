@@ -16,7 +16,7 @@ export function ProductCard({
   const hasPrice = product.variants.some((v) => v.price !== null);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-graphite/12 bg-champagne-paper transition-colors hover:border-red-brand/40">
+    <article className="group flex flex-col overflow-hidden rounded-[var(--radius-card)] border border-graphite/12 bg-paper transition-colors hover:border-burgundy/40">
       <Link
         href={`/product/${product.slug}`}
         className="relative block aspect-4/5 overflow-hidden"
@@ -40,25 +40,27 @@ export function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 className="font-display text-xl leading-snug">
-          <Link href={`/product/${product.slug}`} className="hover:text-red-brand">
+        <h3 className="text-[1.0625rem] leading-snug">
+          <Link href={`/product/${product.slug}`} className="hover:text-burgundy">
             {product.title}
           </Link>
         </h3>
 
-        <p className="line-clamp-2 text-sm text-graphite-muted">
+        <p className="line-clamp-2 text-sm text-ink-muted">
           {product.composition}
         </p>
 
-        <div className="mt-auto flex items-center justify-between gap-3 border-t border-graphite/12 pt-3">
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-kraft/25 pt-3">
+          {/* Пока прайса нет, крупная надпись «Цена уточняется» только пугает:
+              вместо неё — спокойная подпись и понятная кнопка. */}
           <p
             className={
               hasPrice
-                ? "font-semibold text-lg whitespace-nowrap"
-                : "text-sm text-graphite-muted"
+                ? "text-lg font-semibold whitespace-nowrap"
+                : "text-[0.8125rem] leading-tight text-ink-muted"
             }
           >
-            {price}
+            {hasPrice ? price : "Стоимость подтвердит флорист"}
           </p>
 
           <a
@@ -67,9 +69,9 @@ export function ProductCard({
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center rounded-[var(--radius-button)] bg-red-brand px-4 text-sm font-semibold text-champagne-paper transition-colors hover:bg-red-hover"
+            className="inline-flex min-h-11 shrink-0 items-center rounded-[var(--radius-button)] bg-burgundy px-4 text-sm font-semibold text-ink-light transition-colors hover:bg-burgundy-dark"
           >
-            {hasPrice ? "Заказать" : "Узнать цену"}
+            {hasPrice ? "Заказать" : "Запросить стоимость"}
           </a>
         </div>
       </div>

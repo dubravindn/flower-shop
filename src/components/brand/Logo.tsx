@@ -1,83 +1,82 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { COMPANY } from "@/config/company";
+import { Monogram, MonogramMicro } from "@/components/brand/Monogram";
+
+export { Monogram, MonogramMicro };
 
 /**
- * Логотип.
+ * Три официальные компоновки логотипа.
  *
- * Пока фирменный SVG не передан, используется текстовый lockup:
- * монограмма «ЦБД» кириллицей + полное название. Круглой рамки нет —
- * это прямо запрещено в ТЗ.
+ * horizontal — монограмма слева, полное название справа в две строки.
+ *              Основная версия: шапка, вывеска, документы, фургон.
+ * vertical   — монограмма сверху, название под ней. Упаковка и соцсети.
+ * mark       — только монограмма. Favicon, аватар, печать, мелкие элементы.
  *
- * Как заменить на готовый знак: положить файл в `public/brand/logo.svg`
- * и заменить содержимое `Monogram` на <Image src="/brand/logo.svg" …>.
- * Разметка и размеры контейнера менять не придётся.
+ * Монограмма нигде не заменяет полное название: сокращать «Цветочная База
+ * Дубравиных» до «ЦБД» в интерфейсе нельзя.
  */
-
-export function Monogram({
-  className,
-  tone = "red",
-}: {
-  className?: string;
-  tone?: "red" | "light";
-}) {
-  return (
-    <span
-      aria-hidden="true"
-      className={cn(
-        "grid aspect-square place-items-center font-display leading-none",
-        "border",
-        tone === "red"
-          ? "border-champagne-foil/70 bg-red-brand text-champagne-light"
-          : "border-champagne-foil/60 bg-transparent text-champagne-light",
-        className,
-      )}
-    >
-      <span className="translate-y-[0.04em] tracking-[0.06em]">
-        {COMPANY.monogram}
-      </span>
-    </span>
-  );
-}
-
 export function Logo({
-  variant = "full",
-  tone = "red",
+  variant = "horizontal",
+  tone = "ink",
   className,
+  asLink = true,
 }: {
-  /** full — монограмма и название, mark — только монограмма */
-  variant?: "full" | "mark";
-  tone?: "red" | "light";
+  variant?: "horizontal" | "vertical" | "mark";
+  /** ink — тёмный текст на светлом, light — светлый на тёмном */
+  tone?: "ink" | "light";
   className?: string;
+  asLink?: boolean;
 }) {
-  return (
-    <Link
-      href="/"
-      aria-label={`${COMPANY.name} — на главную`}
-      className={cn("inline-flex items-center gap-3", className)}
-    >
-      <Monogram className="size-10 text-lg" tone={tone} />
+  const nameColor = tone === "light" ? "text-ink-light" : "text-ink";
+  const markColor = tone === "light" ? "text-gold-light" : "text-burgundy";
 
-      {variant === "full" && (
-        <span className="hidden leading-tight sm:block">
-          <span
-            className={cn(
-              "block font-display text-[1.0625rem] tracking-tight",
-              tone === "red" ? "text-graphite" : "text-champagne-paper",
-            )}
-          >
-            Цветочная База
-          </span>
-          <span
-            className={cn(
-              "block font-display text-[1.0625rem] tracking-tight",
-              tone === "red" ? "text-red-brand" : "text-champagne-light",
-            )}
-          >
-            Дубравиных
-          </span>
+  const inner = (
+    <>
+      <Monogram
+        concept="architect"
+        title=""
+        className={cn(
+          markColor,
+          variant === "vertical" ? "h-10 w-auto" : "h-7 w-auto sm:h-8",
+        )}
+      />
+
+      {variant !== "mark" && (
+        <span
+          className={cn(
+            "font-display leading-[1.15] tracking-tight",
+            nameColor,
+            variant === "vertical"
+              ? "mt-3 text-center text-lg"
+              : "text-[0.9375rem] sm:text-base",
+          )}
+        >
+          Цветочная База
+          <br />
+          Дубравиных
         </span>
       )}
+    </>
+  );
+
+  const layout = cn(
+    "inline-flex",
+    variant === "vertical" ? "flex-col items-center" : "items-center gap-3",
+    className,
+  );
+
+  if (!asLink) {
+    return (
+      <span className={layout} aria-label={COMPANY.name}>
+        {inner}
+      </span>
+    );
+  }
+
+  return (
+    <Link href="/" aria-label={`${COMPANY.name} — на главную`} className={layout}>
+      {inner}
     </Link>
   );
 }

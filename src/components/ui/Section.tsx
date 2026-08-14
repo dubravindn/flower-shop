@@ -5,11 +5,11 @@ import { cn } from "@/lib/cn";
 export type SectionTone = "paper" | "paper-deep" | "red" | "champagne" | "graphite";
 
 const TONES: Record<SectionTone, string> = {
-  paper: "bg-champagne-paper text-graphite",
-  "paper-deep": "bg-champagne-paper-deep text-graphite",
-  red: "bg-red-brand text-champagne-paper on-red",
-  champagne: "bg-champagne-surface text-graphite",
-  graphite: "bg-graphite text-champagne-paper on-graphite",
+  paper: "bg-paper text-graphite",
+  "paper-deep": "bg-champagne-light text-graphite",
+  red: "bg-burgundy text-paper on-dark",
+  champagne: "bg-champagne text-graphite",
+  graphite: "bg-graphite text-paper on-dark",
 };
 
 export function Section({

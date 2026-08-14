@@ -40,7 +40,7 @@ export default function CorporatePage() {
               className="rounded-[var(--radius-card)] border border-graphite/15 p-6"
             >
               <h3 className="font-sans text-lg font-semibold">{service.title}</h3>
-              <p className="mt-2 text-graphite-muted">{service.text}</p>
+              <p className="mt-2 text-ink-muted">{service.text}</p>
             </li>
           ))}
         </ul>
@@ -74,7 +74,7 @@ export default function CorporatePage() {
           </ButtonLink>
         </div>
 
-        <p className="mt-4 text-sm text-graphite-muted">
+        <p className="mt-4 text-sm text-ink-muted">
           Форма с загрузкой референсов появится вместе с серверным приёмом заявок.
         </p>
       </Section>

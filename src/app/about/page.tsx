@@ -41,9 +41,9 @@ export default function AboutPage() {
         />
         <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-graphite/15 bg-graphite/15 sm:grid-cols-2 lg:grid-cols-3">
           {ADVANTAGES.map((item) => (
-            <li key={item.title} className="bg-champagne-paper p-6">
+            <li key={item.title} className="bg-paper p-6">
               <h3 className="font-sans text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-[0.9375rem] text-graphite-muted">{item.text}</p>
+              <p className="mt-2 text-[0.9375rem] text-ink-muted">{item.text}</p>
             </li>
           ))}
         </ul>
@@ -58,14 +58,14 @@ export default function AboutPage() {
               className="rounded-[var(--radius-card)] border border-graphite/15 p-5"
             >
               <h3 className="font-sans text-lg font-semibold">{store.name}</h3>
-              <p className="mt-1 text-[0.9375rem] text-graphite-muted">
+              <p className="mt-1 text-[0.9375rem] text-ink-muted">
                 {store.city}, {store.address}
               </p>
               <p className="text-[0.9375rem] font-semibold">{store.hours}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 max-w-[62ch] text-graphite-muted">
+        <p className="mt-6 max-w-[62ch] text-ink-muted">
           Оптовые заказы отправляем по Кировской области, на север региона и в
           Сыктывкар. Розничная доставка работает по {COMPANY.city}у.
         </p>
