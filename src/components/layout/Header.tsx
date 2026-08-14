@@ -10,35 +10,6 @@ import { TOP_BAR } from "@/content/home";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ButtonLink } from "@/components/ui/Button";
 
-function IconSearch() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="size-5">
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-3.6-3.6" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function IconHeart() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="size-5">
-      <path d="M12 20s-7.2-4.5-7.2-9.6A4.3 4.3 0 0 1 12 7.7a4.3 4.3 0 0 1 7.2 2.7C19.2 15.5 12 20 12 20Z" />
-    </svg>
-  );
-}
-
-function IconCart() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" className="size-5">
-      <path d="M4 6h16l-1.4 11.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8Z" />
-      <path d="M9 6V4.8a3 3 0 0 1 6 0V6" />
-    </svg>
-  );
-}
-
-const ICON_BUTTON =
-  "inline-grid size-11 place-items-center rounded-[var(--radius-button)] text-graphite transition-colors hover:bg-graphite/8 hover:text-red-brand";
-
 export function Header() {
   const [stuck, setStuck] = useState(false);
 
@@ -112,17 +83,9 @@ export function Header() {
             </ul>
           </nav>
 
+          {/* Поиск, избранное и корзина появятся вместе с работающими
+              функциями: иконка, ведущая в пустоту, хуже её отсутствия. */}
           <div className="flex items-center gap-1">
-            <Link href="/catalog" aria-label="Поиск по каталогу" className={ICON_BUTTON}>
-              <IconSearch />
-            </Link>
-            <Link href="/favorites" aria-label="Избранное" className={cn(ICON_BUTTON, "hidden sm:inline-grid")}>
-              <IconHeart />
-            </Link>
-            <Link href="/cart" aria-label="Корзина" className={ICON_BUTTON}>
-              <IconCart />
-            </Link>
-
             <ButtonLink
               href={whatsappLink()}
               size="md"

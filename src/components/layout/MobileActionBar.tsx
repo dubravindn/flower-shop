@@ -2,13 +2,13 @@ import Link from "next/link";
 import { whatsappLink } from "@/config/company";
 
 /**
- * Компактная нижняя панель для телефонов: каталог, корзина, связь.
+ * Компактная нижняя панель для телефонов: каталог, магазины, связь.
  * На десктопе скрыта. Все цели не меньше 44×44 px.
  */
 export function MobileActionBar() {
   const items = [
     { href: "/catalog", label: "Каталог", icon: "catalog" as const },
-    { href: "/cart", label: "Корзина", icon: "cart" as const },
+    { href: "/contacts", label: "Магазины", icon: "shop" as const },
     { href: whatsappLink(), label: "Написать", icon: "chat" as const, external: true },
   ];
 
@@ -36,7 +36,7 @@ export function MobileActionBar() {
   );
 }
 
-function Icon({ name }: { name: "catalog" | "cart" | "chat" }) {
+function Icon({ name }: { name: "catalog" | "shop" | "chat" }) {
   const common = {
     viewBox: "0 0 24 24",
     fill: "none",
@@ -54,11 +54,11 @@ function Icon({ name }: { name: "catalog" | "cart" | "chat" }) {
     );
   }
 
-  if (name === "cart") {
+  if (name === "shop") {
     return (
       <svg {...common}>
-        <path d="M4 6h16l-1.4 11.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8Z" />
-        <path d="M9 6V4.8a3 3 0 0 1 6 0V6" />
+        <path d="M4 9h16v10H4zM4 9l1.5-4h13L20 9" />
+        <path d="M10 19v-5h4v5" />
       </svg>
     );
   }

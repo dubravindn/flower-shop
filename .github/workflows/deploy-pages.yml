@@ -39,6 +39,9 @@ jobs:
           GITHUB_PAGES: "true"
         run: npm run build
 
+      - name: Проверка внутренних ссылок
+        run: npm run check:links
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
