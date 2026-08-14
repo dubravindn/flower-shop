@@ -24,6 +24,13 @@ const nextConfig: NextConfig = {
     output: "export" as const,
     basePath,
     assetPrefix: basePath,
+    /**
+     * Каждая страница выгружается как `путь/index.html`, а не `путь.html`.
+     * Без этого GitHub Pages отдаёт 404 на адрес со слешем в конце:
+     * `/catalog` работал, `/catalog/` — нет. Люди копируют ссылки со слешем,
+     * и поисковики обходят оба варианта.
+     */
+    trailingSlash: true,
   }),
 
   env: {
