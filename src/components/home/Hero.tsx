@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img } from "@/components/ui/Img";
 import { ButtonLink } from "@/components/ui/Button";
 import { HERO } from "@/content/home";
 
@@ -45,7 +45,7 @@ export function Hero() {
 
         <div className="relative">
           <div className="relative aspect-4/5 overflow-hidden rounded-[var(--radius-card)] border border-champagne-foil/40 sm:aspect-3/2 lg:aspect-4/5">
-            <Image
+            <Img
               src="/images/works/buket-letniy-mix.jpg"
               alt="Крупный авторский букет из сезонных цветов"
               fill

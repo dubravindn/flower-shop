@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import { Img } from "@/components/ui/Img";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { Input, Select, Textarea } from "@/components/ui/Field";
 import {
@@ -177,7 +177,7 @@ export default function BrandPreviewPage() {
 
       <Block title="Образ владельцев">
         <div className="flex flex-wrap items-start gap-6">
-          <Image
+          <Img
             src={founder.src}
             alt={founder.alt}
             width={220}

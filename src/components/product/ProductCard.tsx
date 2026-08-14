@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img } from "@/components/ui/Img";
 import Link from "next/link";
 import type { Product } from "@/types";
 import { formatFromPrice } from "@/lib/format";
@@ -21,7 +21,7 @@ export function ProductCard({
         href={`/product/${product.slug}`}
         className="relative block aspect-4/5 overflow-hidden"
       >
-        <Image
+        <Img
           src={product.image}
           alt={product.imageAlt}
           fill

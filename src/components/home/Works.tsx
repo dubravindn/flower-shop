@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img } from "@/components/ui/Img";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { WORKS_BLOCK } from "@/content/home";
 import { PRODUCTS } from "@/content/catalog";
@@ -24,7 +24,7 @@ export function Works() {
             key={item.slug}
             className="relative aspect-4/5 overflow-hidden rounded-[var(--radius-card)] border border-graphite/12"
           >
-            <Image
+            <Img
               src={item.image}
               alt={item.imageAlt}
               fill

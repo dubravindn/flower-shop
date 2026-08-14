@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img } from "@/components/ui/Img";
 import { cn } from "@/lib/cn";
 import { ButtonLink } from "@/components/ui/Button";
 import { founderImage, type FounderRatio } from "@/config/founders";
@@ -88,7 +88,7 @@ export function FoundersSection({
           {/* Фотография */}
           <figure className="m-0">
             <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-champagne-foil/35">
-              <Image
+              <Img
                 src={image.src}
                 alt={image.alt}
                 width={image.width}

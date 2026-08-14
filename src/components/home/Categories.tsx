@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Img } from "@/components/ui/Img";
 import Link from "next/link";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CATEGORIES, OCCASIONS } from "@/content/catalog";
@@ -35,7 +35,7 @@ export function Categories() {
               href={`/catalog/${category.slug}`}
               className="group relative flex aspect-3/2 flex-col justify-end overflow-hidden rounded-[var(--radius-card)] border border-graphite/12 p-5 text-champagne-paper"
             >
-              <Image
+              <Img
                 src={category.image}
                 alt={category.imageAlt}
                 fill

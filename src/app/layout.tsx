@@ -25,7 +25,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"), // TODO: заменить на рабочий домен
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
     default: `${COMPANY.name} — цветы оптом и в розницу в Кирове`,
     template: `%s — ${COMPANY.name}`,
