@@ -105,6 +105,51 @@ const FOUNDER_CROPS = [
   },
 ];
 
+/**
+ * Студийная обработка фона.
+ *
+ * Братья остаются резкими, всё остальное уходит в расфокус — как при съёмке
+ * на открытой диафрагме. Маска субъектов задана в координатах оригинала:
+ * два эллипса по головам и полоса по линии плеч, растушёванные на 45 px,
+ * поэтому переход читается как глубина резкости, а не как вырезанный контур.
+ *
+ * Лица, фигуры и цвет кожи не затрагиваются: обработка применяется только
+ * к фону через инвертированную маску.
+ */
+async function studioBackdrop() {
+  const { width: W, height: H } = await sharp(SOURCE_PHOTO).metadata();
+
+  const subjectMask = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+    <defs><filter id="feather" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="45"/></filter></defs>
+    <g filter="url(#feather)" fill="#fff">
+      <ellipse cx="555" cy="1050" rx="265" ry="300"/>
+      <ellipse cx="900" cy="1010" rx="230" ry="295"/>
+      <rect x="150" y="1120" width="1020" height="400" rx="40"/>
+    </g></svg>`);
+
+  // Лёгкая тёплая заливка гасит синие и лиловые блики клубного света
+  const tint = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+    <rect width="${W}" height="${H}" fill="#332826" opacity="0.28"/></svg>`);
+
+  const subject = await sharp(SOURCE_PHOTO)
+    .composite([{ input: subjectMask, blend: "dest-in" }])
+    .png()
+    .toBuffer();
+
+  const blurred = await sharp(SOURCE_PHOTO)
+    .blur(26)
+    .modulate({ brightness: 1.05, saturation: 0.3 })
+    .toBuffer();
+
+  const backdrop = await sharp(blurred)
+    .composite([{ input: tint }])
+    .png()
+    .toBuffer();
+
+  return sharp(backdrop).composite([{ input: subject }]).png().toBuffer();
+}
+
 async function prepareFounders() {
   await mkdir(FOUNDERS, { recursive: true });
 
@@ -113,12 +158,13 @@ async function prepareFounders() {
     return;
   }
 
+  const processed = await studioBackdrop();
+
   for (const crop of FOUNDER_CROPS) {
-    await sharp(SOURCE_PHOTO)
-      .rotate()
+    await sharp(processed)
       .extract(crop.region)
       .resize(crop.w, crop.h)
-      // Съёмка тёмная: лёгкий подъём яркости и подрезка после увеличения.
+      // Подъём яркости и подрезка после увеличения.
       // Лица, пропорции и цвет кожи не меняются.
       .modulate({ brightness: 1.05 })
       .sharpen({ sigma: 0.6 })
