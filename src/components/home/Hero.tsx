@@ -64,8 +64,8 @@ export function Hero() {
           />
           <div className="relative aspect-4/5 overflow-hidden border border-kraft/35 sm:aspect-3/2 lg:aspect-4/5">
             <Img
-              src="/images/works/buket-letniy-mix.jpg"
-              alt="Авторский букет из сезонных цветов"
+              src="/images/works/buket-nezhnyy-rozovyy.jpg"
+              alt="Авторский букет из белой хризантемы, роз и альстромерии"
               fill
               priority
               sizes="(min-width: 1024px) 46vw, 100vw"

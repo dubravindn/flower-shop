@@ -10,7 +10,14 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
       // Служебные страницы в индекс не отдаём
-      disallow: ["/brand-preview", "/cart", "/checkout", "/order/", "/unsubscribe"],
+      disallow: [
+        "/brand-preview",
+        "/logo-preview",
+        "/cart",
+        "/checkout",
+        "/order/",
+        "/unsubscribe",
+      ],
     },
     sitemap: `${SITE}/sitemap.xml`,
   };

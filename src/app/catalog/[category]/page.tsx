@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CATEGORIES, findCategory } from "@/content/catalog";
-import { CatalogView } from "../CatalogView";
+import { CatalogGrid } from "../CatalogGrid";
 
 export function generateStaticParams() {
   return CATEGORIES.map((category) => ({ category: category.slug }));
@@ -41,9 +40,7 @@ export default async function CategoryPage({
         title={found.title}
         text={found.caption}
       />
-      <Suspense>
-        <CatalogView category={found.slug} />
-      </Suspense>
+      <CatalogGrid category={found.slug} />
     </>
   );
 }

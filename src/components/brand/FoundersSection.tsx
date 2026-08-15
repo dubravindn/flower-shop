@@ -17,6 +17,8 @@ export interface FoundersSectionProps {
   imageSide?: "left" | "right";
   /** Подпись под фотографией — например, имена владельцев */
   caption?: string;
+  /** Секция стоит в начале страницы — грузить фотографию сразу */
+  priority?: boolean;
 }
 
 const TONES = {
@@ -39,6 +41,7 @@ export function FoundersSection({
   tone = "kraft",
   imageSide = "right",
   caption,
+  priority = false,
 }: FoundersSectionProps) {
   const image = founderImage(ratio, alt);
   
@@ -85,12 +88,16 @@ export function FoundersSection({
 
           {/* Фотография */}
           <figure className="m-0">
-            <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-kraft/40">
+            {/* Без рамки: пока фотография грузится, пустой контур читается
+                как незагруженный блок. Крафтовая подложка того же размера
+                держит место и остаётся материалом, а не «дыркой». */}
+            <div className="texture-kraft relative overflow-hidden bg-kraft/25">
               <Img
                 src={image.src}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
+                priority={priority}
                 sizes="(min-width: 1024px) 46vw, 100vw"
                 className="h-auto w-full object-cover"
               />

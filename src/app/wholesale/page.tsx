@@ -72,6 +72,7 @@ export default function WholesalePage() {
         alt={founders.alt}
         tone="paper"
         imageSide="left"
+        priority
       />
 
       <Section tone="paper-deep" id="price">

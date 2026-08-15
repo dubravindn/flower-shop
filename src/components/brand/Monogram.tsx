@@ -9,7 +9,7 @@
  * Цвет управляется через currentColor.
  */
 
-export type MonogramConcept = "architect" | "ribbon" | "monolith";
+export type MonogramConcept = "architect" | "ribbon" | "monolith" | "plastic";
 
 export interface ConceptMeta {
   id: MonogramConcept;
@@ -99,6 +99,31 @@ const MONOLITH = [
   "M149 148h14v16h-14z",
 ].join("");
 
+/* ============================================================== D · пластика */
+
+/**
+ * Мягкая премиальная версия: та же кириллическая основа, но штрих тоньше,
+ * все торцы и сгибы скруглены, у «Ц» скруглён нижний угол, у «Д» плечи
+ * идут дугами. Знак теряет трафаретность и читается как фирменная подпись,
+ * а не как техническая надпись.
+ */
+const PLASTIC = [
+  // Ц — мягкий нижний угол, хвост вынесен вниз
+  "M28 26V78Q28 90 40 90H96",
+  "M100 26V112",
+  // Б — скруглённая перекладина и полная чаша
+  "M134 26V90",
+  "M134 26H188",
+  "M134 56H166A17 17 0 0 1 166 90H134",
+  // Д — плечи дугами, широкое основание, короткие опоры
+  "M230 26H270",
+  "M230 26C228 50 220 74 212 90",
+  "M270 26C272 50 280 74 288 90",
+  "M204 90H296",
+  "M214 90V112",
+  "M286 90V112",
+].join(" ");
+
 /* ------------------------------------------------------------------ реестр */
 
 export const CONCEPTS: Record<MonogramConcept, ConceptMeta & { d: string }> = {
@@ -117,6 +142,14 @@ export const CONCEPTS: Record<MonogramConcept, ConceptMeta & { d: string }> = {
     viewBox: "0 0 316 132",
     render: "stroke",
     d: RIBBON,
+  },
+  plastic: {
+    id: "plastic",
+    title: "D · Пластика",
+    idea: "Мягкая премиальная версия: тоньше штрих, скруглённые торцы и сгибы, у «Д» плечи идут дугами. Знак теряет трафаретность и работает как подпись бренда — вариант для упаковки и вывески.",
+    viewBox: "0 0 316 132",
+    render: "stroke",
+    d: PLASTIC,
   },
   monolith: {
     id: "monolith",
@@ -154,9 +187,9 @@ export function Monogram({
         d={meta.d}
         fillRule={stroke ? undefined : "evenodd"}
         stroke={stroke ? "currentColor" : undefined}
-        strokeWidth={stroke ? 16 : undefined}
-        strokeLinecap={stroke ? "butt" : undefined}
-        strokeLinejoin={stroke ? "miter" : undefined}
+        strokeWidth={stroke ? (concept === "plastic" ? 14 : 16) : undefined}
+        strokeLinecap={stroke ? (concept === "plastic" ? "round" : "butt") : undefined}
+        strokeLinejoin={stroke ? (concept === "plastic" ? "round" : "miter") : undefined}
       />
     </svg>
   );
