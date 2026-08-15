@@ -20,8 +20,8 @@ export function Stores() {
           >
             {/* Фотографий фасадов компания не передавала — вместо них
                 фирменная плашка с типом точки, а не чужой снимок. */}
-            <div className="mb-4 flex aspect-3/2 items-end rounded-[var(--radius-card)] bg-burgundy p-4">
-              <span className="font-display text-2xl text-champagne-light">
+            <div className="texture-kraft mb-4 flex aspect-3/2 items-end rounded-[var(--radius-card)] bg-kraft/35 p-4">
+              <span className="font-display text-2xl text-kraft-dark">
                 {store.kind === "base" ? "База" : "Магазин"}
               </span>
             </div>

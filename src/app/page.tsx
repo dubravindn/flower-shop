@@ -86,7 +86,7 @@ export default function HomePage() {
         cta={founders.cta}
         ratio={founders.ratio}
         alt={founders.alt}
-        tone="red"
+        tone="kraft"
         imageSide="right"
         caption="Братья Дубравины, владельцы базы"
       />

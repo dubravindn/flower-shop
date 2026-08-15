@@ -12,7 +12,7 @@ export interface FoundersSectionProps {
   ratio: FounderRatio;
   alt: string;
   /** Фон блока */
-  tone?: "red" | "paper" | "graphite";
+  tone?: "burgundy" | "paper" | "kraft";
   /** С какой стороны фотография на широком экране */
   imageSide?: "left" | "right";
   /** Подпись под фотографией — например, имена владельцев */
@@ -20,9 +20,9 @@ export interface FoundersSectionProps {
 }
 
 const TONES = {
-  red: "bg-burgundy text-paper on-dark",
-  paper: "bg-champagne-light text-graphite",
-  graphite: "bg-graphite text-paper on-dark",
+  burgundy: "bg-burgundy text-ink-light on-dark",
+  paper: "texture-kraft bg-champagne-light/70 text-ink",
+  kraft: "texture-kraft bg-kraft/25 text-ink",
 } as const;
 
 /**
@@ -36,13 +36,12 @@ export function FoundersSection({
   cta,
   ratio,
   alt,
-  tone = "red",
+  tone = "kraft",
   imageSide = "right",
   caption,
 }: FoundersSectionProps) {
   const image = founderImage(ratio, alt);
-  const onDark = tone !== "paper";
-
+  
   return (
     <section
       className={cn(
@@ -76,8 +75,7 @@ export function FoundersSection({
               <ButtonLink
                 href={cta.href}
                 size="lg"
-                variant={onDark ? "primary" : "primary"}
-                onRed={tone === "red"}
+                onRed={tone === "burgundy"}
                 className="mt-8"
               >
                 {cta.label}
@@ -87,7 +85,7 @@ export function FoundersSection({
 
           {/* Фотография */}
           <figure className="m-0">
-            <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-gold-light/35">
+            <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-kraft/40">
               <Img
                 src={image.src}
                 alt={image.alt}

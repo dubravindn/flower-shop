@@ -42,18 +42,27 @@ export const metadata: Metadata = {
       "Букеты, композиции и доставка по Кирову. Оптовые поставки для цветочных магазинов.",
     images: [
       {
-        url: "/images/founders/founders-og.jpg",
+        url: "/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: `${COMPANY.name} — братья Дубравины`,
+        alt: COMPANY.name,
       },
     ],
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#B10F24",
+  themeColor: "#741C2C",
 };
 
 export default function RootLayout({
