@@ -18,9 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/care",
     "/reminders",
-    "/privacy",
-    "/consent",
-    "/offer",
+    // /privacy, /consent и /offer намеренно исключены: пока это шаблоны
+    // без реквизитов и юридической проверки, им нечего делать в поиске.
   ];
 
   return [

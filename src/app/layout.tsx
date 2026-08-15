@@ -27,33 +27,42 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: `${COMPANY.name} — цветы оптом и в розницу в Кирове`,
+    default: `${COMPANY.name} — доставка цветов в Кирове за 2 часа`,
     template: `%s — ${COMPANY.name}`,
   },
   description:
-    "Свежие цветы каждый день: букеты, композиции и доставка по Кирову. Оптовые поставки цветочным магазинам и флористам с собственной базы.",
+    "Цветочная База Дубравиных — цветочный магазин в Кирове. Авторские букеты, доставка за 2 часа, фото букета перед отправкой. Заказ через WhatsApp.",
   applicationName: COMPANY.name,
   openGraph: {
     type: "website",
     locale: "ru_RU",
     siteName: COMPANY.name,
-    title: `${COMPANY.name} — цветы оптом и в розницу в Кирове`,
+    title: `${COMPANY.name} — доставка цветов в Кирове за 2 часа`,
     description:
       "Букеты, композиции и доставка по Кирову. Оптовые поставки для цветочных магазинов.",
     images: [
       {
-        url: "/images/founders/founders-og.jpg",
+        url: "/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: `${COMPANY.name} — братья Дубравины`,
+        alt: COMPANY.name,
       },
     ],
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#B10F24",
+  themeColor: "#741C2C",
 };
 
 export default function RootLayout({
@@ -65,7 +74,7 @@ export default function RootLayout({
       <body className="flex min-h-dvh flex-col pb-16 md:pb-0">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-200 focus:bg-red-brand focus:px-4 focus:py-3 focus:text-champagne-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-200 focus:bg-burgundy focus:px-4 focus:py-3 focus:text-paper"
         >
           Перейти к содержимому
         </a>

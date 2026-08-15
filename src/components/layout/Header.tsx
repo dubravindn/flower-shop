@@ -23,11 +23,11 @@ export function Header() {
   return (
     <>
       {/* --- Служебная строка --- */}
-      <div className="bg-graphite text-champagne-paper on-graphite">
+      <div className="bg-graphite text-paper on-dark">
         <div className="container-page flex h-9 items-center justify-between gap-4 text-[0.8125rem]">
           <p className="flex items-center gap-2">
             <span className="font-semibold">{TOP_BAR.city}</span>
-            <span aria-hidden="true" className="text-champagne-foil">
+            <span aria-hidden="true" className="text-gold-light">
               ·
             </span>
             <span className="hidden text-champagne-light/85 sm:inline">
@@ -55,7 +55,7 @@ export function Header() {
       {/* --- Шапка --- */}
       <header
         className={cn(
-          "sticky top-0 z-50 border-b bg-champagne-paper/95 backdrop-blur",
+          "sticky top-0 z-50 border-b bg-paper/95 backdrop-blur",
           "transition-[height,border-color] duration-200",
           stuck ? "border-graphite/12" : "border-transparent",
         )}
@@ -74,7 +74,7 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-graphite-muted transition-colors hover:text-red-brand"
+                    className="text-ink-muted transition-colors hover:text-burgundy"
                   >
                     {item.label}
                   </Link>

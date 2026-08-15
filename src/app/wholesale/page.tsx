@@ -80,23 +80,23 @@ export default function WholesalePage() {
           {STEPS.map((step, index) => (
             <li
               key={step.title}
-              className="rounded-[var(--radius-card)] border border-graphite/15 bg-champagne-paper p-6"
+              className="rounded-[var(--radius-card)] border border-graphite/15 bg-paper p-6"
             >
               <span
                 aria-hidden="true"
-                className="mb-3 block font-display text-2xl text-champagne-foil"
+                className="mb-3 block font-display text-2xl text-gold-light"
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="font-sans text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-[0.9375rem] text-graphite-muted">{step.text}</p>
+              <p className="mt-2 text-[0.9375rem] text-ink-muted">{step.text}</p>
             </li>
           ))}
         </ol>
 
-        <div className="mt-10 rounded-[var(--radius-card)] border border-graphite/15 bg-champagne-paper p-6 md:p-8">
+        <div className="mt-10 rounded-[var(--radius-card)] border border-graphite/15 bg-paper p-6 md:p-8">
           <h2 className="text-[clamp(1.375rem,3vw,1.875rem)]">Оставить заявку</h2>
-          <p className="mt-3 max-w-[58ch] text-graphite-muted">
+          <p className="mt-3 max-w-[58ch] text-ink-muted">
             Напишите менеджеру объём закупки, интересующие позиции и город — пришлём
             актуальный прайс и условия отгрузки. Приём заявок формой на сайте появится
             вместе с личным кабинетом оптового клиента.
@@ -123,7 +123,7 @@ export default function WholesalePage() {
           {FAQ.map((item) => (
             <div key={item.q} className="py-5">
               <dt className="font-sans text-lg font-semibold">{item.q}</dt>
-              <dd className="mt-2 text-graphite-muted">{item.a}</dd>
+              <dd className="mt-2 text-ink-muted">{item.a}</dd>
             </div>
           ))}
         </dl>

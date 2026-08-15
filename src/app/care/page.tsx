@@ -29,12 +29,12 @@ export default function CarePage() {
             >
               <span
                 aria-hidden="true"
-                className="mb-3 block font-display text-2xl text-champagne-foil"
+                className="mb-3 block font-display text-2xl text-gold-light"
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="font-sans text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-[0.9375rem] text-graphite-muted">{step.text}</p>
+              <p className="mt-2 text-[0.9375rem] text-ink-muted">{step.text}</p>
             </li>
           ))}
         </ol>
@@ -46,7 +46,7 @@ export default function CarePage() {
           {CARE.byFlower.map((item) => (
             <div key={item.title} className="py-5">
               <dt className="font-sans text-lg font-semibold">{item.title}</dt>
-              <dd className="mt-2 text-graphite-muted">{item.text}</dd>
+              <dd className="mt-2 text-ink-muted">{item.text}</dd>
             </div>
           ))}
         </dl>

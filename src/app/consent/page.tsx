@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "Текст согласия на обработку персональных данных и на получение напоминаний о важных датах.",
   alternates: { canonical: "/consent" },
+  // Документ не прошёл юридическую проверку и не содержит реквизитов:
+  // до этого он не должен попадать в поиск.
+  robots: { index: false, follow: false },
 };
 
 export default function ConsentPage() {
@@ -20,7 +23,7 @@ export default function ConsentPage() {
       />
 
       <Prose>
-        <p className="rounded-[var(--radius-card)] border border-red-brand/30 bg-red-brand/5 p-4 text-sm">
+        <p className="rounded-[var(--radius-card)] border border-burgundy/30 bg-burgundy/5 p-4 text-sm">
           {LEGAL_NOTE}
         </p>
 

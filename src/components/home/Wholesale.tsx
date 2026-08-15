@@ -10,7 +10,7 @@ function CheckIcon() {
       stroke="currentColor"
       strokeWidth="2.2"
       aria-hidden="true"
-      className="mt-1 size-5 shrink-0 text-champagne-foil"
+      className="mt-1 size-5 shrink-0 text-gold"
     >
       <path d="M20 6 9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -22,12 +22,12 @@ export function Wholesale() {
   return (
     <section
       id="wholesale"
-      className="on-graphite bg-graphite py-[var(--spacing-section)] text-champagne-paper md:py-[var(--spacing-section-lg)]"
+      className="texture-kraft bg-champagne-light py-[var(--spacing-section)] text-ink md:py-[var(--spacing-section-lg)]"
     >
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
           <div>
-            <p className="eyebrow mb-4 text-champagne-foil">
+            <p className="eyebrow mb-4 text-kraft-dark">
               <span aria-hidden="true" className="inline-block h-px w-5 bg-current" />
               {WHOLESALE_BLOCK.eyebrow}
             </p>
@@ -36,19 +36,18 @@ export function Wholesale() {
               {WHOLESALE_BLOCK.title}
             </h2>
 
-            <p className="mt-5 max-w-[52ch] text-[1.0625rem] leading-relaxed text-champagne-paper/80">
+            <p className="mt-5 max-w-[52ch] text-[1.0625rem] leading-relaxed text-ink-muted">
               {WHOLESALE_BLOCK.text}
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonLink href={WHOLESALE_BLOCK.primary.href} size="lg" onRed>
+              <ButtonLink href={WHOLESALE_BLOCK.primary.href} size="lg">
                 {WHOLESALE_BLOCK.primary.label}
               </ButtonLink>
               <ButtonLink
                 href={WHOLESALE_BLOCK.secondary.href}
                 size="lg"
                 variant="outline"
-                onRed
               >
                 {WHOLESALE_BLOCK.secondary.label}
               </ButtonLink>
@@ -60,14 +59,14 @@ export function Wholesale() {
               {WHOLESALE_BLOCK.points.map((point) => (
                 <li key={point} className="flex gap-3 text-[1.0625rem]">
                   <CheckIcon />
-                  <span className="text-champagne-paper/90">{point}</span>
+                  <span className="text-ink">{point}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="rule-foil my-8" />
+            <div className="rule-gold my-8" />
 
-            <p className="text-sm text-champagne-paper/65">
+            <p className="text-sm text-ink-muted">
               География отправки: {COMPANY.delivery.regions.join(", ")}.
             </p>
           </div>

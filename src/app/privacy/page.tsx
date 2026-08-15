@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description:
     "Политика обработки персональных данных Цветочной Базы Дубравиных: какие данные собираются, зачем и как их удалить.",
   alternates: { canonical: "/privacy" },
+  // Документ не прошёл юридическую проверку и не содержит реквизитов:
+  // до этого он не должен попадать в поиск.
+  robots: { index: false, follow: false },
 };
 
 export default function PrivacyPage() {
@@ -20,7 +23,7 @@ export default function PrivacyPage() {
       />
 
       <Prose>
-        <p className="rounded-[var(--radius-card)] border border-red-brand/30 bg-red-brand/5 p-4 text-sm">
+        <p className="rounded-[var(--radius-card)] border border-burgundy/30 bg-burgundy/5 p-4 text-sm">
           {LEGAL_NOTE}
         </p>
 

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="on-red bg-red-brand py-24 text-champagne-paper md:py-36">
+    <section className="on-dark bg-burgundy py-24 text-paper md:py-36">
       <div className="container-page text-center">
-        <p className="font-display text-[clamp(4rem,14vw,9rem)] leading-none text-champagne-foil">
+        <p className="font-display text-[clamp(4rem,14vw,9rem)] leading-none text-gold-light">
           404
         </p>
 

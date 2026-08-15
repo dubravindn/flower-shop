@@ -2,39 +2,49 @@
 
 /* ============================================================================
    «Цветочная База Дубравиных» — дизайн-токены.
-   Палитра: чистый красный (55–60%), тёплый шампань (30–35%), графит (до 10%),
-   металлический акцент — только тонкие линии и мелкие детали.
+
+   Материалы вместо заливок: шампань и тёплая бумага держат основной объём,
+   крафт даёт натуральную поверхность, бургунди работает акцентом, золото —
+   только тонкие линии и мелкие детали.
+
+   Ориентир по площади: светлые поверхности ~45%, крафт ~25%, фотографии ~20%,
+   бургунди не более 7–10%, золото до 3%.
    ========================================================================== */
 
 @theme {
-  /* --- Фирменный красный --- */
-  --color-red-brand: #b10f24;
-  --color-red-hover: #970b1c;
-  --color-red-dark: #7d0917;
+  /* --- Бургунди: спелая вишня, акцент --- */
+  --color-burgundy: #741c2c;
+  --color-burgundy-dark: #53121e;
+  --color-burgundy-light: #96364a;
+  --color-burgundy-muted: #87505a;
 
-  /* --- Шампань --- */
-  --color-champagne: #b89b72;
-  --color-champagne-light: #d4be9d;
-  --color-champagne-surface: #c8af8b;
-  --color-champagne-foil: #c9aa6a;
+  /* --- Шампань и тёплая бумага: основные светлые поверхности --- */
+  --color-paper: #f2e9db;
+  --color-champagne-light: #e4d5bf;
+  --color-champagne: #d1b891;
 
-  /* Тёплая светлая подложка вместо белого. Холодный белый запрещён. */
-  --color-champagne-paper: #f6efe4;
-  --color-champagne-paper-deep: #efe4d3;
+  /* --- Крафт: натуральная плотная бумага --- */
+  --color-kraft: #a98257;
+  --color-kraft-dark: #765737;
 
-  /* --- Графит: текст и мелкие служебные элементы --- */
-  --color-graphite: #241d1d;
-  --color-graphite-muted: #4b4140;
+  /* --- Золото: только линии, мелкие детали и подписи --- */
+  --color-gold: #b6924e;
+  --color-gold-light: #ccad6c;
+
+  /* --- Текст --- */
+  --color-graphite: #292321;
+  --color-ink: #332a26;
+  --color-ink-muted: #6b5a50;
+  --color-ink-light: #f3e9da;
 
   /* --- Типографика --- */
   --font-display: var(--font-prata), "Times New Roman", serif;
   --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
 
-  /* --- Радиусы: карточки 0–8px, кнопки 4–6px --- */
+  /* --- Геометрия: карточки 0–8px, кнопки 4–6px --- */
   --radius-card: 4px;
   --radius-button: 5px;
 
-  /* --- Ритм секций --- */
   --spacing-section: 4.5rem;
   --spacing-section-lg: 7rem;
 }
@@ -46,12 +56,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: var(--color-champagne-paper);
-    color: var(--color-graphite);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.6;
@@ -62,29 +73,35 @@
   h1,
   h2,
   h3 {
-    font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -0.01em;
     text-wrap: balance;
+    margin: 0;
   }
 
-  /* Видимый фокус на всех интерактивных элементах */
+  /* Prata — только крупные заголовки. Подзаголовки и карточки набираются
+     гротеском: декоративный шрифт во всех уровнях даёт салонную эстетику. */
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
   :focus-visible {
-    outline: 2px solid var(--color-red-brand);
+    outline: 2px solid var(--color-gold);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
-  /* На красном фоне обводка фокуса должна быть светлой */
-  .on-red :focus-visible,
-  .on-graphite :focus-visible {
-    outline-color: var(--color-champagne-light);
-  }
-
   ::selection {
-    background: var(--color-red-brand);
-    color: var(--color-champagne-paper);
+    background: var(--color-burgundy);
+    color: var(--color-ink-light);
   }
 }
 
@@ -94,7 +111,7 @@
 
 @utility container-page {
   width: 100%;
-  max-width: 82.5rem; /* 1320px */
+  max-width: 82.5rem;
   margin-inline: auto;
   padding-inline: 1.25rem;
 
@@ -107,35 +124,41 @@
   }
 }
 
-/* Тонкая шампань-линия — единственный «металлический» приём в системе */
-@utility rule-foil {
-  height: 1px;
-  background: color-mix(in srgb, var(--color-champagne-foil) 55%, transparent);
+/**
+ * Фактура крафтовой бумаги. Один встроенный SVG-шум размером 120×120,
+ * повторяется тайлом и почти прозрачен: даёт материальность поверхности,
+ * не мешая тексту и фотографиям. Растровых текстур нет — вес нулевой.
+ */
+@utility texture-kraft {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
-/* Плашка-надзаголовок */
+/** Тонкая золотая линия — единственный «металлический» приём. */
+@utility rule-gold {
+  height: 1px;
+  background: color-mix(in srgb, var(--color-gold) 60%, transparent);
+}
+
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-/* ============================================================================
-   Появление секций: 200–400 мс, с уважением к prefers-reduced-motion
-   ========================================================================== */
-
+/* Появление секций: 200–400 мс */
 @utility reveal {
-  animation: reveal-in 360ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: reveal-in 340ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 @keyframes reveal-in {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -155,4 +178,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Обводка фокуса на тёмных подложках должна быть светлой */
+.on-dark :focus-visible {
+  outline-color: var(--color-champagne-light);
 }

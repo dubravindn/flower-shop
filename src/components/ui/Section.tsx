@@ -1,15 +1,16 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-/** Фон секции. Красный и шампань — основные, бумага — нейтральная подложка. */
-export type SectionTone = "paper" | "paper-deep" | "red" | "champagne" | "graphite";
+/** Фон секции. Бумага и шампань держат объём, крафт даёт материал,
+ * бургунди — только там, где нужен сильный акцент. */
+export type SectionTone = "paper" | "paper-deep" | "burgundy" | "champagne" | "kraft";
 
 const TONES: Record<SectionTone, string> = {
-  paper: "bg-champagne-paper text-graphite",
-  "paper-deep": "bg-champagne-paper-deep text-graphite",
-  red: "bg-red-brand text-champagne-paper on-red",
-  champagne: "bg-champagne-surface text-graphite",
-  graphite: "bg-graphite text-champagne-paper on-graphite",
+  paper: "bg-paper text-ink",
+  "paper-deep": "texture-kraft bg-champagne-light/70 text-ink",
+  burgundy: "bg-burgundy text-ink-light on-dark",
+  champagne: "texture-kraft bg-champagne-light text-ink",
+  kraft: "texture-kraft bg-kraft/20 text-ink",
 };
 
 export function Section({

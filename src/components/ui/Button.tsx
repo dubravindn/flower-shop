@@ -25,22 +25,22 @@ const SIZES: Record<ButtonSize, string> = {
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:
-    "bg-red-brand text-champagne-paper hover:bg-red-hover active:bg-red-dark",
+    "bg-burgundy text-paper hover:bg-burgundy-dark active:bg-burgundy-dark",
   secondary:
-    "bg-champagne text-graphite hover:bg-champagne-light active:bg-champagne-surface",
+    "bg-champagne text-graphite hover:bg-champagne-light active:bg-champagne",
   outline:
-    "border border-graphite/25 text-graphite hover:border-red-brand hover:text-red-brand",
-  text: "text-red-brand underline-offset-4 hover:underline px-0",
+    "border border-graphite/25 text-graphite hover:border-burgundy hover:text-burgundy",
+  text: "text-burgundy underline-offset-4 hover:underline px-0",
 };
 
 /** Те же варианты, но на красной подложке. */
 const VARIANTS_ON_RED: Record<ButtonVariant, string> = {
   primary:
-    "bg-champagne-paper text-red-dark hover:bg-champagne-light active:bg-champagne-surface",
+    "bg-paper text-burgundy-dark hover:bg-champagne-light active:bg-champagne",
   secondary:
-    "bg-champagne-foil text-graphite hover:bg-champagne-light active:bg-champagne",
+    "bg-gold-light text-graphite hover:bg-champagne-light active:bg-champagne",
   outline:
-    "border border-champagne-light/50 text-champagne-paper hover:border-champagne-foil hover:text-champagne-light",
+    "border border-champagne-light/50 text-paper hover:border-gold-light hover:text-champagne-light",
   text: "text-champagne-light underline-offset-4 hover:underline px-0",
 };
 

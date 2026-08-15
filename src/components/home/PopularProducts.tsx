@@ -40,7 +40,7 @@ export function PopularProducts() {
   const products = filterProducts(tab);
 
   return (
-    <section className="bg-champagne-paper py-[var(--spacing-section)] text-graphite md:py-[var(--spacing-section-lg)]">
+    <section className="bg-paper py-[var(--spacing-section)] text-graphite md:py-[var(--spacing-section-lg)]">
       <div className="container-page">
         <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading
@@ -52,7 +52,7 @@ export function PopularProducts() {
 
           <Link
             href="/catalog"
-            className="shrink-0 font-semibold text-red-brand underline-offset-4 hover:underline"
+            className="shrink-0 font-semibold text-burgundy underline-offset-4 hover:underline"
           >
             Весь каталог →
           </Link>
@@ -70,8 +70,8 @@ export function PopularProducts() {
               className={cn(
                 "min-h-11 rounded-[var(--radius-button)] border px-4 text-sm font-semibold transition-colors",
                 tab === item.id
-                  ? "border-red-brand bg-red-brand text-champagne-paper"
-                  : "border-graphite/20 text-graphite hover:border-red-brand hover:text-red-brand",
+                  ? "border-burgundy bg-burgundy text-paper"
+                  : "border-graphite/20 text-graphite hover:border-burgundy hover:text-burgundy",
               )}
             >
               {item.label}

@@ -15,7 +15,7 @@ export function MobileActionBar() {
   return (
     <nav
       aria-label="Быстрые действия"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-graphite/15 bg-champagne-paper/97 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-graphite/15 bg-paper/97 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden"
     >
       <ul className="grid grid-cols-3">
         {items.map((item) => (
@@ -24,7 +24,7 @@ export function MobileActionBar() {
               href={item.href}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
-              className="flex min-h-14 flex-col items-center justify-center gap-1 text-[0.6875rem] font-semibold text-graphite transition-colors hover:text-red-brand"
+              className="flex min-h-14 flex-col items-center justify-center gap-1 text-[0.6875rem] font-semibold text-graphite transition-colors hover:text-burgundy"
             >
               <Icon name={item.icon} />
               {item.label}
