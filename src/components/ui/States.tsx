@@ -11,9 +11,9 @@ const BADGE_LABELS: Record<ProductBadge, string> = {
 };
 
 const BADGE_TONES: Record<ProductBadge, string> = {
-  hit: "bg-burgundy text-paper",
-  new: "bg-gold-light text-graphite",
-  today: "bg-graphite text-paper",
+  hit: "bg-emerald text-ivory-light",
+  new: "bg-gold-light text-text",
+  today: "bg-text text-ivory-light",
 };
 
 export function Badge({
@@ -30,7 +30,7 @@ export function Badge({
       className={cn(
         "inline-flex items-center rounded-[3px] px-2 py-1",
         "text-[0.6875rem] font-semibold uppercase tracking-[0.1em]",
-        kind ? BADGE_TONES[kind] : "bg-champagne text-graphite",
+        kind ? BADGE_TONES[kind] : "bg-ivory text-text",
         className,
       )}
     >
@@ -46,7 +46,7 @@ export function Skeleton({ className }: { className?: string }) {
     <span
       aria-hidden="true"
       className={cn(
-        "block animate-pulse rounded-[var(--radius-card)] bg-graphite/10",
+        "block animate-pulse rounded-[var(--radius-card)] bg-text/10",
         className,
       )}
     />
@@ -84,12 +84,12 @@ function StateShell({
       className={cn(
         "flex flex-col items-center gap-3 rounded-[var(--radius-card)] px-6 py-12 text-center",
         tone === "error"
-          ? "border border-burgundy/30 bg-burgundy/5"
-          : "border border-graphite/12 bg-champagne-light/60",
+          ? "border border-emerald/30 bg-emerald/5"
+          : "border border-text/12 bg-ivory/60",
       )}
     >
       <p className="font-display text-2xl">{title}</p>
-      {text && <p className="max-w-[46ch] text-ink-muted">{text}</p>}
+      {text && <p className="max-w-[46ch] text-text-muted">{text}</p>}
       {action && <div className="mt-2">{action}</div>}
     </div>
   );

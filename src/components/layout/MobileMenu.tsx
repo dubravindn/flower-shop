@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { MAIN_NAV } from "@/config/navigation";
 import { COMPANY, whatsappLink } from "@/config/company";
 import { ButtonLink } from "@/components/ui/Button";
-import { Monogram } from "@/components/brand/Logo";
+import { LogoMark } from "@/components/brand/Logo";
 
 /**
  * Мобильное меню. Открывается панелью справа, держит фокус внутри,
@@ -70,7 +70,7 @@ export function MobileMenu() {
         aria-expanded={open}
         aria-haspopup="dialog"
         aria-label="Открыть меню"
-        className="inline-grid size-11 place-items-center rounded-[var(--radius-button)] text-graphite transition-colors hover:bg-graphite/8 xl:hidden"
+        className="inline-grid size-11 place-items-center rounded-[var(--radius-button)] text-text transition-colors hover:bg-text/8 xl:hidden"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-6">
           <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
@@ -83,7 +83,7 @@ export function MobileMenu() {
             type="button"
             aria-label="Закрыть меню"
             onClick={close}
-            className="absolute inset-0 bg-graphite/55"
+            className="absolute inset-0 bg-text/55"
           />
 
           <div
@@ -91,23 +91,19 @@ export function MobileMenu() {
             role="dialog"
             aria-modal="true"
             aria-label="Меню сайта"
-            className="reveal absolute inset-y-0 right-0 flex w-[min(22rem,88vw)] flex-col overflow-y-auto bg-paper shadow-xl"
+            className="reveal absolute inset-y-0 right-0 flex w-[min(22rem,88vw)] flex-col overflow-y-auto bg-ivory-light shadow-xl"
           >
-            <div className="flex items-center justify-between border-b border-graphite/12 px-5 py-4">
+            <div className="flex items-center justify-between border-b border-text/12 px-5 py-4">
               <span className="flex items-center gap-3">
-                <Monogram className="size-9 text-base" />
-                <span className="font-display text-lg leading-tight">
-                  Цветочная База
-                  <br />
-                  Дубравиных
-                </span>
+                <LogoMark className="size-9 text-base" />
+                <span className="font-display text-lg leading-tight">Цветы Дубравиных</span>
               </span>
 
               <button
                 type="button"
                 onClick={close}
                 aria-label="Закрыть меню"
-                className="inline-grid size-11 place-items-center rounded-[var(--radius-button)] hover:bg-graphite/8"
+                className="inline-grid size-11 place-items-center rounded-[var(--radius-button)] hover:bg-text/8"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="size-5">
                   <path d="m6 6 12 12M18 6 6 18" strokeLinecap="round" />
@@ -118,7 +114,7 @@ export function MobileMenu() {
             <nav aria-label="Меню сайта" className="flex-1 px-5 py-4">
               <ul className="flex flex-col">
                 {MAIN_NAV.map((item) => (
-                  <li key={item.href} className="border-b border-graphite/10 last:border-0">
+                  <li key={item.href} className="border-b border-text/10 last:border-0">
                     <Link
                       href={item.href}
                       onClick={close}
@@ -126,7 +122,7 @@ export function MobileMenu() {
                     >
                       <span className="font-display text-xl">{item.label}</span>
                       {item.hint && (
-                        <span className="mt-0.5 block text-sm text-ink-muted">
+                        <span className="mt-0.5 block text-sm text-text-muted">
                           {item.hint}
                         </span>
                       )}
@@ -136,10 +132,10 @@ export function MobileMenu() {
               </ul>
             </nav>
 
-            <div className="border-t border-graphite/12 px-5 py-5">
+            <div className="border-t border-text/12 px-5 py-5">
               <a
                 href={COMPANY.phone.href}
-                className="mb-3 block font-display text-2xl text-burgundy"
+                className="mb-3 block font-display text-2xl text-emerald"
               >
                 {COMPANY.phone.display}
               </a>

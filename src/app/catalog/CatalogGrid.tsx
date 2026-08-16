@@ -21,7 +21,7 @@ export function CatalogGrid({ category }: { category?: CategorySlug }) {
         <CatalogFilters category={category} />
       </Suspense>
 
-      <p className="mb-6 text-sm text-ink-muted">
+      <p className="mb-6 text-sm text-text-muted">
         Показано работ: <span id="catalog-count">{products.length}</span>
       </p>
 
@@ -37,10 +37,10 @@ export function CatalogGrid({ category }: { category?: CategorySlug }) {
       <div
         id="catalog-empty"
         hidden
-        className="mt-6 border border-kraft/30 bg-champagne-light/50 px-6 py-12 text-center"
+        className="mt-6 border border-gold/30 bg-ivory/50 px-6 py-12 text-center"
       >
         <p className="font-display text-2xl">Под эти условия работ пока нет</p>
-        <p className="mx-auto mt-2 max-w-[46ch] text-ink-muted">
+        <p className="mx-auto mt-2 max-w-[46ch] text-text-muted">
           Снимите фильтр по поводу или напишите флористу — подберём букет под
           повод и бюджет вручную.
         </p>

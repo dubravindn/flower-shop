@@ -48,8 +48,8 @@ const PROPORTIONS = [
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="border-t border-kraft/30 py-10">
-      <h2 className="mb-6 font-sans text-xs font-semibold tracking-[0.14em] text-burgundy uppercase">
+    <section className="border-t border-gold/30 py-10">
+      <h2 className="mb-6 font-sans text-xs font-semibold tracking-[0.14em] text-emerald uppercase">
         {title}
       </h2>
       {children}
@@ -64,14 +64,14 @@ export default function BrandPreviewPage() {
     <div className="container-page py-12">
       <header className="mb-10">
         <h1 className="text-[clamp(2rem,5vw,3rem)]">Дизайн-система</h1>
-        <p className="mt-3 max-w-[64ch] text-ink-muted">
+        <p className="mt-3 max-w-[64ch] text-text-muted">
           Страница доступна только в режиме разработки. В production она отдаёт
           404 и не попадает в карту сайта и навигацию.
         </p>
       </header>
 
       <Block title="Монограмма ЦБД — выбор направления">
-        <p className="mb-6 max-w-[68ch] text-[0.9375rem] text-ink-muted">
+        <p className="mb-6 max-w-[68ch] text-[0.9375rem] text-text-muted">
           Три равноправные концепции с одинаковой метрикой: высота прописной 68,
           толщина штриха 16, выносные элементы 20. Ни одна буква не взята из
           шрифта. Сейчас на сайте временно стоит вариант A — окончательный выбор
@@ -90,11 +90,11 @@ export default function BrandPreviewPage() {
           <Logo asLink={false} />
           <Logo variant="vertical" asLink={false} />
           <Logo variant="mark" asLink={false} />
-          <div className="bg-kraft-dark p-5">
+          <div className="bg-emerald-dark p-5">
             <Logo tone="light" asLink={false} />
           </div>
         </div>
-        <p className="mt-4 max-w-[64ch] text-sm text-ink-muted">
+        <p className="mt-4 max-w-[64ch] text-sm text-text-muted">
           Круглой окантовки нет. Монограмма нигде не заменяет полное название:
           аббревиатура используется отдельно только там, где название физически
           не помещается — favicon, аватар, печать, мелкая наклейка.
@@ -104,12 +104,12 @@ export default function BrandPreviewPage() {
       <Block title="Палитра">
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {PALETTE.map((color) => (
-            <li key={color.name} className="border border-kraft/25">
+            <li key={color.name} className="border border-gold/25">
               <span className="block h-14" style={{ background: color.hex }} />
               <span className="block p-3">
                 <span className="block font-semibold">{color.name}</span>
-                <span className="block text-sm text-ink-muted">{color.hex}</span>
-                <span className="mt-1 block text-xs text-ink-muted">{color.note}</span>
+                <span className="block text-sm text-text-muted">{color.hex}</span>
+                <span className="mt-1 block text-xs text-text-muted">{color.note}</span>
               </span>
             </li>
           ))}
@@ -125,7 +125,7 @@ export default function BrandPreviewPage() {
             />
           ))}
         </div>
-        <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-ink-muted">
+        <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-sm text-text-muted">
           {PROPORTIONS.map((p) => (
             <li key={p.label}>
               <span
@@ -141,13 +141,13 @@ export default function BrandPreviewPage() {
 
       <Block title="Крафтовая фактура">
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="texture-kraft flex h-28 items-center justify-center bg-paper text-sm">
+          <div className="texture-warm flex h-28 items-center justify-center bg-ivory-light text-sm">
             paper
           </div>
-          <div className="texture-kraft flex h-28 items-center justify-center bg-champagne-light text-sm">
+          <div className="texture-warm flex h-28 items-center justify-center bg-ivory text-sm">
             champagne-light
           </div>
-          <div className="texture-kraft flex h-28 items-center justify-center bg-kraft text-sm text-ink-light">
+          <div className="texture-warm flex h-28 items-center justify-center bg-gold text-sm text-white">
             kraft
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function BrandPreviewPage() {
             Manrope — интерфейс, карточки, цены и технические данные:
             2 900 ₽, 25 шт., 6:00 – 00:00.
           </p>
-          <p className="text-sm text-ink-muted">Второстепенный текст</p>
+          <p className="text-sm text-text-muted">Второстепенный текст</p>
         </div>
       </Block>
 
@@ -178,7 +178,7 @@ export default function BrandPreviewPage() {
             Загрузка
           </Button>
         </div>
-        <div className="flex flex-wrap items-center gap-3 bg-burgundy p-5 on-dark">
+        <div className="flex flex-wrap items-center gap-3 bg-emerald p-5 on-dark">
           <ButtonLink href="#" onRed>
             На бургунди
           </ButtonLink>
@@ -226,7 +226,7 @@ export default function BrandPreviewPage() {
           {PENDING_CLAIMS.map((claim) => (
             <li key={claim.key} className="flex flex-wrap gap-2">
               <span className="font-semibold">{claim.text}</span>
-              <span className="text-ink-muted">— {claim.note}</span>
+              <span className="text-text-muted">— {claim.note}</span>
             </li>
           ))}
         </ul>
@@ -236,7 +236,7 @@ export default function BrandPreviewPage() {
           {MISSING.map((item) => (
             <li key={item.field} className="flex flex-wrap gap-2">
               <span className="font-semibold">{item.field}</span>
-              <code className="bg-kraft/15 px-1 text-ink-muted">{item.where}</code>
+              <code className="bg-gold/15 px-1 text-text-muted">{item.where}</code>
             </li>
           ))}
         </ul>

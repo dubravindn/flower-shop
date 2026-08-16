@@ -43,10 +43,10 @@ const routeTo = (query: string) =>
   `https://yandex.ru/maps/?text=${encodeURIComponent(query)}`;
 
 export const COMPANY = {
-  /** Полное название. Пишется только так, без сокращений. */
-  name: "Цветочная База Дубравиных",
-  /** Фирменная монограмма. Кириллица, не латиница. */
-  monogram: "ЦБД",
+  /** Основное название бренда. */
+  name: "Цветы Дубравиных",
+  /** Дополнительное название — дескриптор рода деятельности. */
+  descriptor: "Цветочная база",
   legalName: TODO as Maybe<string>, // TODO: юридическое лицо от владельца
   inn: TODO as Maybe<string>, // TODO: ИНН
   ogrn: TODO as Maybe<string>, // TODO: ОГРН
@@ -66,7 +66,7 @@ export const COMPANY = {
   /** Прямой чат с менеджером. Текст подставляется в поле ввода. */
   whatsapp: {
     base: "https://wa.me/79229955500",
-    defaultMessage: "Здравствуйте! Пишу с сайта Цветочной Базы Дубравиных",
+    defaultMessage: "Здравствуйте! Пишу с сайта Цветов Дубравиных",
   },
 
   /** География отправки — со слов компании */

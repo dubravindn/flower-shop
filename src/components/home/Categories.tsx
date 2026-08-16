@@ -21,7 +21,7 @@ function ArrowIcon() {
 /** 6 крупных категорий. Карточки без белого фона — фото на всю плашку. */
 export function Categories() {
   return (
-    <Section tone="paper">
+    <Section tone="white">
       <SectionHeading
         eyebrow="Каталог"
         title="Что можно заказать"
@@ -33,7 +33,7 @@ export function Categories() {
           <li key={category.slug}>
             <Link
               href={`/catalog/${category.slug}`}
-              className="group relative flex aspect-4/5 flex-col justify-end overflow-hidden p-5 text-ink-light sm:aspect-3/2"
+              className="group relative flex aspect-4/5 flex-col justify-end overflow-hidden p-5 text-white sm:aspect-3/2"
             >
               <Img
                 src={category.image}
@@ -46,13 +46,13 @@ export function Categories() {
               {/* Затемнение снизу, чтобы текст читался на любом кадре */}
               <span
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-graphite/80 via-graphite/25 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-emerald-dark/92 via-emerald-dark/45 to-transparent"
               />
 
               <span className="relative flex items-end justify-between gap-3">
                 <span>
                   <span className="block font-display text-[1.375rem]">{category.title}</span>
-                  <span className="mt-1 block text-sm text-champagne-light/90">
+                  <span className="mt-1 block text-sm text-gold-light">
                     {category.caption}
                   </span>
                 </span>
@@ -69,7 +69,7 @@ export function Categories() {
 /** Подбор по поводу — компактная лента ссылок в каталог с фильтром. */
 export function Occasions() {
   return (
-    <Section tone="paper">
+    <Section tone="white">
       <SectionHeading
         eyebrow="Подобрать по поводу"
         title="Для какого случая букет"
@@ -81,7 +81,7 @@ export function Occasions() {
           <li key={occasion.slug}>
             <Link
               href={`/catalog?occasion=${occasion.slug}`}
-              className="group flex min-h-16 items-center justify-between gap-4 rounded-[var(--radius-card)] border border-kraft/35 bg-champagne-light/50 px-5 py-4 transition-colors hover:border-burgundy hover:bg-champagne-light"
+              className="group flex min-h-16 items-center justify-between gap-4 rounded-[var(--radius-card)] border border-gold/35 bg-ivory/50 px-5 py-4 transition-colors hover:border-emerald hover:bg-ivory"
             >
               <span className="text-[1.0625rem] font-semibold">{occasion.title}</span>
               <ArrowIcon />

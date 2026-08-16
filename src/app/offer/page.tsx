@@ -6,7 +6,7 @@ import { LEGAL_NOTE, UPDATED_AT } from "@/content/legal";
 export const metadata: Metadata = {
   title: "Публичная оферта",
   description:
-    "Условия продажи и доставки цветов Цветочной Базы Дубравиных: оформление заказа, оплата, замена состава, возврат.",
+    "Условия продажи и доставки цветов Цветов Дубравиных: оформление заказа, оплата, замена состава, возврат.",
   alternates: { canonical: "/offer" },
   // Документ не прошёл юридическую проверку и не содержит реквизитов:
   // до этого он не должен попадать в поиск.
@@ -23,7 +23,7 @@ export default function OfferPage() {
       />
 
       <Prose>
-        <p className="rounded-[var(--radius-card)] border border-burgundy/30 bg-burgundy/5 p-4 text-sm">
+        <p className="rounded-[var(--radius-card)] border border-emerald/30 bg-emerald/5 p-4 text-sm">
           {LEGAL_NOTE} Реквизиты продавца, порядок возврата денежных средств и
           сроки будут внесены после согласования с владельцем.
         </p>

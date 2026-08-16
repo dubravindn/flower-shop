@@ -5,7 +5,7 @@ import { COMPANY, whatsappLink } from "@/config/company";
 
 export const metadata: Metadata = {
   title: "Заказ принят",
-  description: "Подтверждение заказа в Цветочной Базе Дубравиных.",
+  description: "Подтверждение заказа в Цветах Дубравиных.",
   alternates: { canonical: "/order/success" },
   robots: { index: false, follow: false },
 };
@@ -20,7 +20,7 @@ export default function OrderSuccessPage() {
       />
 
       <div className="container-page py-12 md:py-16">
-        <div className="max-w-[62ch] rounded-[var(--radius-card)] border border-graphite/15 bg-paper p-6 md:p-8">
+        <div className="max-w-[62ch] rounded-[var(--radius-card)] border border-text/15 bg-ivory-light p-6 md:p-8">
           <h2 className="text-2xl">Что дальше</h2>
           <ol className="mt-4 list-decimal space-y-2 pl-5 text-[1.0625rem]">
             <li>Флорист подтверждает наличие и стоимость.</li>

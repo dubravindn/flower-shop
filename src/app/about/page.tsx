@@ -9,7 +9,7 @@ import { ADVANTAGES } from "@/content/home";
 export const metadata: Metadata = {
   title: "О компании",
   description:
-    "Цветочная База Дубравиных — семейная цветочная компания в Кирове: своя оптово-розничная база, три магазина и доставка. Авторские букеты, доставка за 2 часа.",
+    "Цветы Дубравиных — семейная цветочная компания в Кирове: своя оптово-розничная база, три магазина и доставка. Авторские букеты, доставка за 2 часа.",
   alternates: { canonical: "/about" },
 };
 
@@ -31,41 +31,41 @@ export default function AboutPage() {
         cta={founders.cta}
         ratio={founders.ratio}
         alt={founders.alt}
-        tone="paper"
+        tone="white"
       />
 
-      <Section tone="paper-deep">
+      <Section tone="ivory">
         <SectionHeading
           eyebrow="Как устроено дело"
           title="Что стоит за букетом"
         />
-        <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-graphite/15 bg-graphite/15 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-px overflow-hidden rounded-[var(--radius-card)] border border-text/15 bg-text/15 sm:grid-cols-2 lg:grid-cols-3">
           {ADVANTAGES.map((item) => (
-            <li key={item.title} className="bg-paper p-6">
+            <li key={item.title} className="bg-ivory-light p-6">
               <h3 className="font-sans text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-[0.9375rem] text-ink-muted">{item.text}</p>
+              <p className="mt-2 text-[0.9375rem] text-text-muted">{item.text}</p>
             </li>
           ))}
         </ul>
       </Section>
 
-      <Section tone="paper">
+      <Section tone="white">
         <SectionHeading eyebrow="География" title="Где нас можно найти" />
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STORES.map((store) => (
             <li
               key={store.id}
-              className="rounded-[var(--radius-card)] border border-graphite/15 p-5"
+              className="rounded-[var(--radius-card)] border border-text/15 p-5"
             >
               <h3 className="font-sans text-lg font-semibold">{store.name}</h3>
-              <p className="mt-1 text-[0.9375rem] text-ink-muted">
+              <p className="mt-1 text-[0.9375rem] text-text-muted">
                 {store.city}, {store.address}
               </p>
               <p className="text-[0.9375rem] font-semibold">{store.hours}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 max-w-[62ch] text-ink-muted">
+        <p className="mt-6 max-w-[62ch] text-text-muted">
           Оптовые заказы отправляем по Кировской области, на север региона и в
           Сыктывкар. Розничная доставка работает по {COMPANY.city}у.
         </p>

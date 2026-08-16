@@ -25,23 +25,23 @@ const SIZES: Record<ButtonSize, string> = {
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:
-    "bg-burgundy text-paper hover:bg-burgundy-dark active:bg-burgundy-dark",
+    "bg-emerald text-ivory-light hover:bg-emerald-hover active:bg-emerald-dark",
   secondary:
-    "bg-champagne text-graphite hover:bg-champagne-light active:bg-champagne",
+    "bg-ivory text-emerald border border-gold/50 hover:bg-white hover:border-gold",
   outline:
-    "border border-graphite/25 text-graphite hover:border-burgundy hover:text-burgundy",
-  text: "text-burgundy underline-offset-4 hover:underline px-0",
+    "border border-emerald/30 text-emerald hover:border-emerald hover:bg-emerald/5",
+  text: "text-emerald underline-offset-4 hover:underline px-0",
 };
 
-/** Те же варианты, но на красной подложке. */
-const VARIANTS_ON_RED: Record<ButtonVariant, string> = {
+/** Те же варианты на изумрудной подложке. */
+const VARIANTS_ON_DARK: Record<ButtonVariant, string> = {
   primary:
-    "bg-paper text-burgundy-dark hover:bg-champagne-light active:bg-champagne",
+    "bg-gold text-emerald-dark hover:bg-gold-light active:bg-gold-dark",
   secondary:
-    "bg-gold-light text-graphite hover:bg-champagne-light active:bg-champagne",
+    "bg-ivory-light text-emerald hover:bg-white",
   outline:
-    "border border-champagne-light/50 text-paper hover:border-gold-light hover:text-champagne-light",
-  text: "text-champagne-light underline-offset-4 hover:underline px-0",
+    "border border-gold-light/50 text-ivory-light hover:border-gold-light hover:text-gold-light",
+  text: "text-gold-light underline-offset-4 hover:underline px-0",
 };
 
 function classesFor({
@@ -58,7 +58,7 @@ function classesFor({
     "transition-colors duration-200",
     "disabled:cursor-not-allowed disabled:opacity-55",
     SIZES[size],
-    (onRed ? VARIANTS_ON_RED : VARIANTS)[variant],
+    (onRed ? VARIANTS_ON_DARK : VARIANTS)[variant],
     block && "w-full",
     loading && "pointer-events-none opacity-70",
     className,

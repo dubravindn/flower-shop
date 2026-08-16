@@ -17,7 +17,7 @@ import { COMPANY, STORES } from "@/config/company";
 export const metadata: Metadata = {
   title: `${COMPANY.name} — доставка цветов в Кирове за 2 часа`,
   description:
-    "Цветочная База Дубравиных — цветочный магазин в Кирове. Авторские букеты, доставка за 2 часа, фото букета перед отправкой. Заказ через WhatsApp.",
+    "Цветы Дубравиных — цветочный магазин в Кирове. Авторские букеты, доставка за 2 часа, фото букета перед отправкой. Заказ через WhatsApp.",
   alternates: { canonical: "/" },
 };
 
@@ -86,7 +86,7 @@ export default function HomePage() {
         cta={founders.cta}
         ratio={founders.ratio}
         alt={founders.alt}
-        tone="kraft"
+        tone="ivory"
         imageSide="right"
         caption="Братья Дубравины, владельцы базы"
       />

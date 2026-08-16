@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: `%s — ${COMPANY.name}`,
   },
   description:
-    "Цветочная База Дубравиных — цветочный магазин в Кирове. Авторские букеты, доставка за 2 часа, фото букета перед отправкой. Заказ через WhatsApp.",
+    "Цветы Дубравиных — цветочный магазин в Кирове. Авторские букеты, доставка за 2 часа, фото букета перед отправкой. Заказ через WhatsApp.",
   applicationName: COMPANY.name,
   openGraph: {
     type: "website",
@@ -74,7 +74,7 @@ export default function RootLayout({
       <body className="flex min-h-dvh flex-col pb-16 md:pb-0">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-200 focus:bg-burgundy focus:px-4 focus:py-3 focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-200 focus:bg-emerald focus:px-4 focus:py-3 focus:text-ivory-light"
         >
           Перейти к содержимому
         </a>

@@ -22,12 +22,12 @@ export function Wholesale() {
   return (
     <section
       id="wholesale"
-      className="texture-kraft bg-champagne-light py-[var(--spacing-section)] text-ink md:py-[var(--spacing-section-lg)]"
+      className="texture-warm bg-ivory py-[var(--spacing-section)] text-text md:py-[var(--spacing-section-lg)]"
     >
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
           <div>
-            <p className="eyebrow mb-4 text-kraft-dark">
+            <p className="eyebrow mb-4 text-emerald-dark">
               <span aria-hidden="true" className="inline-block h-px w-5 bg-current" />
               {WHOLESALE_BLOCK.eyebrow}
             </p>
@@ -36,7 +36,7 @@ export function Wholesale() {
               {WHOLESALE_BLOCK.title}
             </h2>
 
-            <p className="mt-5 max-w-[52ch] text-[1.0625rem] leading-relaxed text-ink-muted">
+            <p className="mt-5 max-w-[52ch] text-[1.0625rem] leading-relaxed text-text-muted">
               {WHOLESALE_BLOCK.text}
             </p>
 
@@ -59,14 +59,14 @@ export function Wholesale() {
               {WHOLESALE_BLOCK.points.map((point) => (
                 <li key={point} className="flex gap-3 text-[1.0625rem]">
                   <CheckIcon />
-                  <span className="text-ink">{point}</span>
+                  <span className="text-text">{point}</span>
                 </li>
               ))}
             </ul>
 
             <div className="rule-gold my-8" />
 
-            <p className="text-sm text-ink-muted">
+            <p className="text-sm text-text-muted">
               География отправки: {COMPANY.delivery.regions.join(", ")}.
             </p>
           </div>

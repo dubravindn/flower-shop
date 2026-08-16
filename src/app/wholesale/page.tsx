@@ -9,7 +9,7 @@ import { COMPANY, whatsappLink } from "@/config/company";
 export const metadata: Metadata = {
   title: "Цветы оптом в Кирове",
   description:
-    "Цветочная База Дубравиных — оптовые поставки цветов магазинам и флористам Кирова и области. Еженедельные поставки, отправка на север и в Сыктывкар.",
+    "Цветы Дубравиных — оптовые поставки цветов магазинам и флористам Кирова и области. Еженедельные поставки, отправка на север и в Сыктывкар.",
   alternates: { canonical: "/wholesale" },
 };
 
@@ -48,7 +48,7 @@ export default function WholesalePage() {
         crumbs={[{ label: "Оптовым клиентам" }]}
         title="Цветы для цветочного бизнеса"
         text="Поставляем срезку магазинам, флористам и оформителям со своей базы на Воровского. Приёмка, хранение и отгрузка — под нашим контролем."
-        tone="champagne"
+        tone="ivory"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/wholesale/catalog" size="lg">
@@ -70,18 +70,18 @@ export default function WholesalePage() {
         text={founders.text}
         ratio={founders.ratio}
         alt={founders.alt}
-        tone="paper"
+        tone="white"
         imageSide="left"
         priority
       />
 
-      <Section tone="paper-deep" id="price">
+      <Section tone="ivory" id="price">
         <SectionHeading eyebrow="Как это работает" title="Четыре шага до поставки" />
         <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step, index) => (
             <li
               key={step.title}
-              className="rounded-[var(--radius-card)] border border-graphite/15 bg-paper p-6"
+              className="rounded-[var(--radius-card)] border border-text/15 bg-ivory-light p-6"
             >
               <span
                 aria-hidden="true"
@@ -90,14 +90,14 @@ export default function WholesalePage() {
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="font-sans text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-[0.9375rem] text-ink-muted">{step.text}</p>
+              <p className="mt-2 text-[0.9375rem] text-text-muted">{step.text}</p>
             </li>
           ))}
         </ol>
 
-        <div className="mt-10 rounded-[var(--radius-card)] border border-graphite/15 bg-paper p-6 md:p-8">
+        <div className="mt-10 rounded-[var(--radius-card)] border border-text/15 bg-ivory-light p-6 md:p-8">
           <h2 className="text-[clamp(1.375rem,3vw,1.875rem)]">Оставить заявку</h2>
-          <p className="mt-3 max-w-[58ch] text-ink-muted">
+          <p className="mt-3 max-w-[58ch] text-text-muted">
             Напишите менеджеру объём закупки, интересующие позиции и город — пришлём
             актуальный прайс и условия отгрузки. Приём заявок формой на сайте появится
             вместе с личным кабинетом оптового клиента.
@@ -118,13 +118,13 @@ export default function WholesalePage() {
         </div>
       </Section>
 
-      <Section tone="paper">
+      <Section tone="white">
         <SectionHeading eyebrow="Вопросы" title="Частые вопросы оптовых клиентов" />
-        <dl className="max-w-[70ch] divide-y divide-graphite/12 border-y border-graphite/12">
+        <dl className="max-w-[70ch] divide-y divide-text/12 border-y border-text/12">
           {FAQ.map((item) => (
             <div key={item.q} className="py-5">
               <dt className="font-sans text-lg font-semibold">{item.q}</dt>
-              <dd className="mt-2 text-ink-muted">{item.a}</dd>
+              <dd className="mt-2 text-text-muted">{item.a}</dd>
             </div>
           ))}
         </dl>

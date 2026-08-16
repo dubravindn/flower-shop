@@ -23,7 +23,7 @@ export default function ConsentPage() {
       />
 
       <Prose>
-        <p className="rounded-[var(--radius-card)] border border-burgundy/30 bg-burgundy/5 p-4 text-sm">
+        <p className="rounded-[var(--radius-card)] border border-emerald/30 bg-emerald/5 p-4 text-sm">
           {LEGAL_NOTE}
         </p>
 

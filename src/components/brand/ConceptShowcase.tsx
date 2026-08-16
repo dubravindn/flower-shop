@@ -22,80 +22,80 @@ export function Mockups({ concept }: { concept: MonogramConcept }) {
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {/* Крафтовая коробка */}
       <figure className="m-0">
-        <div className="texture-kraft flex aspect-4/3 items-center justify-center bg-kraft p-6">
-          {mark("h-6 w-auto text-champagne-light")}
+        <div className="texture-warm flex aspect-4/3 items-center justify-center bg-gold p-6">
+          {mark("h-6 w-auto text-ivory")}
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Крафтовая коробка</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Крафтовая коробка</figcaption>
       </figure>
 
       {/* Лента для букета */}
       <figure className="m-0">
-        <div className="flex aspect-4/3 items-center justify-center bg-champagne-light p-4">
-          <div className="flex h-8 w-full items-center justify-center bg-burgundy">
+        <div className="flex aspect-4/3 items-center justify-center bg-ivory p-4">
+          <div className="flex h-8 w-full items-center justify-center bg-emerald">
             {mark("h-3.5 w-auto text-gold-light")}
           </div>
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Лента букета</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Лента букета</figcaption>
       </figure>
 
       {/* Бирка */}
       <figure className="m-0">
-        <div className="flex aspect-4/3 items-center justify-center bg-champagne p-6">
-          <div className="texture-kraft flex h-full w-2/3 flex-col items-center justify-center gap-1 border border-kraft-dark/40 bg-paper">
-            {mark("h-4 w-auto text-burgundy")}
-            <span className="text-[7px] tracking-wide text-ink-muted">КИРОВ</span>
+        <div className="flex aspect-4/3 items-center justify-center bg-ivory p-6">
+          <div className="texture-warm flex h-full w-2/3 flex-col items-center justify-center gap-1 border border-emerald-dark/40 bg-ivory-light">
+            {mark("h-4 w-auto text-emerald")}
+            <span className="text-[7px] tracking-wide text-text-muted">КИРОВ</span>
           </div>
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Бирка</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Бирка</figcaption>
       </figure>
 
       {/* Вывеска */}
       <figure className="m-0">
-        <div className="flex aspect-4/3 items-center justify-center bg-graphite p-5">
+        <div className="flex aspect-4/3 items-center justify-center bg-text p-5">
           <div className="flex flex-col items-center gap-2">
             {mark("h-5 w-auto text-gold-light")}
-            <span className="font-display text-[9px] leading-tight text-ink-light">
-              Цветочная База Дубравиных
+            <span className="font-display text-[9px] leading-tight text-white">
+              Цветы Дубравиных
             </span>
           </div>
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Вывеска</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Вывеска</figcaption>
       </figure>
 
       {/* Пакет */}
       <figure className="m-0">
-        <div className="texture-kraft flex aspect-4/3 items-start justify-center bg-kraft-dark p-5">
-          {mark("h-5 w-auto text-champagne-light")}
+        <div className="texture-warm flex aspect-4/3 items-start justify-center bg-emerald-dark p-5">
+          {mark("h-5 w-auto text-ivory")}
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Пакет</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Пакет</figcaption>
       </figure>
 
       {/* Аватар */}
       <figure className="m-0">
-        <div className="flex aspect-4/3 items-center justify-center bg-champagne-light p-4">
-          <div className="flex size-16 items-center justify-center bg-burgundy">
+        <div className="flex aspect-4/3 items-center justify-center bg-ivory p-4">
+          <div className="flex size-16 items-center justify-center bg-emerald">
             {mark("h-4 w-auto text-gold-light")}
           </div>
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Аватар</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Аватар</figcaption>
       </figure>
 
       {/* Борт фургона */}
       <figure className="m-0 sm:col-span-2">
-        <div className="flex aspect-8/3 items-center gap-4 bg-paper p-5 ring-1 ring-kraft/30">
-          {mark("h-8 w-auto shrink-0 text-burgundy")}
-          <span className="font-display text-sm leading-tight text-ink">
+        <div className="flex aspect-8/3 items-center gap-4 bg-ivory-light p-5 ring-1 ring-gold/30">
+          {mark("h-8 w-auto shrink-0 text-emerald")}
+          <span className="font-display text-sm leading-tight text-text">
             Цветочная База
             <br />
             Дубравиных
           </span>
-          <span className="ml-auto text-[10px] text-ink-muted">
+          <span className="ml-auto text-[10px] text-text-muted">
             Доставка по Кирову
             <br />
             за 2 часа
           </span>
         </div>
-        <figcaption className="mt-1.5 text-xs text-ink-muted">Борт фургона</figcaption>
+        <figcaption className="mt-1.5 text-xs text-text-muted">Борт фургона</figcaption>
       </figure>
     </div>
   );
@@ -105,13 +105,13 @@ export function ConceptCard({ concept }: { concept: MonogramConcept }) {
   const meta = CONCEPTS[concept];
 
   return (
-    <article className="border border-kraft/30 bg-paper p-5 md:p-7">
+    <article className="border border-gold/30 bg-ivory-light p-5 md:p-7">
       <h3 className="text-xl">{meta.title}</h3>
-      <p className="mt-2 max-w-[64ch] text-[0.9375rem] text-ink-muted">{meta.idea}</p>
+      <p className="mt-2 max-w-[64ch] text-[0.9375rem] text-text-muted">{meta.idea}</p>
 
       {/* Крупный показ */}
-      <div className="mt-6 flex items-center justify-center bg-champagne-light p-8">
-        <Monogram concept={concept} title="" className="h-20 w-auto text-burgundy" />
+      <div className="mt-6 flex items-center justify-center bg-ivory p-8">
+        <Monogram concept={concept} title="" className="h-20 w-auto text-emerald" />
       </div>
 
       {/* Цветовые версии */}
@@ -129,34 +129,34 @@ export function ConceptCard({ concept }: { concept: MonogramConcept }) {
                 {...{ style: { color: v.fg } }}
               />
             </div>
-            <p className="mt-1 text-[11px] leading-tight text-ink-muted">{v.label}</p>
+            <p className="mt-1 text-[11px] leading-tight text-text-muted">{v.label}</p>
           </div>
         ))}
       </div>
 
       {/* Размеры */}
-      <div className="mt-5 flex flex-wrap items-end gap-5 bg-champagne-light/60 p-4">
+      <div className="mt-5 flex flex-wrap items-end gap-5 bg-ivory/60 p-4">
         {SIZES.map((size) => (
           <div key={size} className="text-center">
             <div className="flex items-end justify-center" style={{ height: 132 }}>
               {size <= 24 ? (
                 <MonogramMicro
                   {...{ style: { height: size, width: "auto" } }}
-                  className="text-burgundy"
+                  className="text-emerald"
                 />
               ) : (
                 <Monogram
                   concept={concept}
                   title=""
                   {...{ style: { height: size, width: "auto" } }}
-                  className="text-burgundy"
+                  className="text-emerald"
                 />
               )}
             </div>
-            <p className="mt-1 text-[11px] text-ink-muted">{size} px</p>
+            <p className="mt-1 text-[11px] text-text-muted">{size} px</p>
           </div>
         ))}
-        <p className="max-w-[24ch] text-[11px] text-ink-muted">
+        <p className="max-w-[24ch] text-[11px] text-text-muted">
           На 16 и 24 px показана упрощённая micro-версия: полная монограмма в
           этих размерах нечитаема.
         </p>
@@ -164,27 +164,27 @@ export function ConceptCard({ concept }: { concept: MonogramConcept }) {
 
       {/* Компоновки с названием */}
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        <div className="flex items-center justify-center bg-paper p-6 ring-1 ring-kraft/25">
+        <div className="flex items-center justify-center bg-ivory-light p-6 ring-1 ring-gold/25">
           <span className="inline-flex items-center gap-3">
-            <Monogram concept={concept} title="" className="h-8 w-auto text-burgundy" />
-            <span className="font-display text-base leading-[1.15] text-ink">
+            <Monogram concept={concept} title="" className="h-8 w-auto text-emerald" />
+            <span className="font-display text-base leading-[1.15] text-text">
               Цветочная База
               <br />
               Дубравиных
             </span>
           </span>
         </div>
-        <div className="flex items-center justify-center bg-paper p-6 ring-1 ring-kraft/25">
+        <div className="flex items-center justify-center bg-ivory-light p-6 ring-1 ring-gold/25">
           <span className="inline-flex flex-col items-center">
-            <Monogram concept={concept} title="" className="h-10 w-auto text-burgundy" />
-            <span className="mt-3 text-center font-display text-base text-ink">
-              Цветочная База Дубравиных
+            <Monogram concept={concept} title="" className="h-10 w-auto text-emerald" />
+            <span className="mt-3 text-center font-display text-base text-text">
+              Цветы Дубравиных
             </span>
           </span>
         </div>
       </div>
 
-      <h4 className="mt-7 mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
+      <h4 className="mt-7 mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-text-muted uppercase">
         Носители
       </h4>
       <Mockups concept={concept} />

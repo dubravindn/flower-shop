@@ -11,7 +11,7 @@ export function Works() {
   const gallery = PRODUCTS.slice(0, 8);
 
   return (
-    <Section tone="paper">
+    <Section tone="white">
       <SectionHeading
         eyebrow={WORKS_BLOCK.eyebrow}
         title={WORKS_BLOCK.title}
@@ -22,7 +22,7 @@ export function Works() {
         {gallery.map((item) => (
           <li
             key={item.slug}
-            className="relative aspect-4/5 overflow-hidden rounded-[var(--radius-card)] border border-graphite/12"
+            className="relative aspect-4/5 overflow-hidden rounded-[var(--radius-card)] border border-text/12"
           >
             <Img
               src={item.image}

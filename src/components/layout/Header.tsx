@@ -23,14 +23,14 @@ export function Header() {
   return (
     <>
       {/* --- Служебная строка --- */}
-      <div className="bg-graphite text-paper on-dark">
+      <div className="bg-text text-ivory-light on-dark">
         <div className="container-page flex h-9 items-center justify-between gap-4 text-[0.8125rem]">
           <p className="flex items-center gap-2">
             <span className="font-semibold">{TOP_BAR.city}</span>
             <span aria-hidden="true" className="text-gold-light">
               ·
             </span>
-            <span className="hidden text-champagne-light/85 sm:inline">
+            <span className="hidden text-ivory/85 sm:inline">
               {TOP_BAR.notice}
             </span>
           </p>
@@ -38,7 +38,7 @@ export function Header() {
           <div className="flex items-center gap-5">
             <Link
               href={TOP_BAR.wholesale.href}
-              className="text-champagne-light underline-offset-4 hover:underline"
+              className="text-ivory underline-offset-4 hover:underline"
             >
               {TOP_BAR.wholesale.label}
             </Link>
@@ -55,9 +55,9 @@ export function Header() {
       {/* --- Шапка --- */}
       <header
         className={cn(
-          "sticky top-0 z-50 border-b bg-paper/95 backdrop-blur",
+          "sticky top-0 z-50 border-b bg-white/95 backdrop-blur",
           "transition-[height,border-color] duration-200",
-          stuck ? "border-graphite/12" : "border-transparent",
+          stuck ? "border-gold/45" : "border-gold/25",
         )}
       >
         <div
@@ -74,7 +74,7 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-ink-muted transition-colors hover:text-burgundy"
+                    className="text-emerald/80 transition-colors hover:text-emerald"
                   >
                     {item.label}
                   </Link>

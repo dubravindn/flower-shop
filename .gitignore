@@ -48,3 +48,4 @@ next-env.d.ts
 
 # статическая выгрузка для GitHub Pages
 /out/
+.serena/

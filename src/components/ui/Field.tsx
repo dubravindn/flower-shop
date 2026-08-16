@@ -5,12 +5,12 @@ import { useId } from "react";
 import { cn } from "@/lib/cn";
 
 const CONTROL = cn(
-  "w-full min-h-11 rounded-[var(--radius-button)] border bg-paper",
-  "border-graphite/22 px-3.5 py-2.5 text-base text-graphite",
-  "placeholder:text-ink-muted/60",
-  "transition-colors focus:border-burgundy focus:outline-none",
+  "w-full min-h-11 rounded-[var(--radius-button)] border bg-ivory-light",
+  "border-text/22 px-3.5 py-2.5 text-base text-text",
+  "placeholder:text-text-muted/60",
+  "transition-colors focus:border-emerald focus:outline-none",
   "disabled:cursor-not-allowed disabled:opacity-55",
-  "aria-[invalid=true]:border-burgundy aria-[invalid=true]:bg-burgundy/5",
+  "aria-[invalid=true]:border-emerald aria-[invalid=true]:bg-emerald/5",
 );
 
 function Label({
@@ -25,11 +25,11 @@ function Label({
   return (
     <label
       htmlFor={htmlFor}
-      className="mb-1.5 block text-sm font-semibold text-graphite"
+      className="mb-1.5 block text-sm font-semibold text-text"
     >
       {children}
       {required && (
-        <span aria-hidden="true" className="ml-0.5 text-burgundy">
+        <span aria-hidden="true" className="ml-0.5 text-emerald">
           *
         </span>
       )}
@@ -40,14 +40,14 @@ function Label({
 function Hint({ id, error, hint }: { id: string; error?: string; hint?: string }) {
   if (error) {
     return (
-      <p id={id} role="alert" className="mt-1.5 text-sm font-medium text-burgundy-dark">
+      <p id={id} role="alert" className="mt-1.5 text-sm font-medium text-emerald-dark">
         {error}
       </p>
     );
   }
   if (hint) {
     return (
-      <p id={id} className="mt-1.5 text-sm text-ink-muted">
+      <p id={id} className="mt-1.5 text-sm text-text-muted">
         {hint}
       </p>
     );

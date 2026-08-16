@@ -30,16 +30,16 @@ export function HelpChoose() {
     .join("\n");
 
   return (
-    <section className="bg-champagne-light py-[var(--spacing-section)] text-graphite md:py-[var(--spacing-section-lg)]">
+    <section className="bg-ivory py-[var(--spacing-section)] text-text md:py-[var(--spacing-section-lg)]">
       <div className="container-page">
-        <div className="grid gap-10 rounded-[var(--radius-card)] border border-graphite/12 bg-paper p-6 md:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+        <div className="grid gap-10 rounded-[var(--radius-card)] border border-text/12 bg-ivory-light p-6 md:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <div>
-            <p className="eyebrow mb-4 text-burgundy">
+            <p className="eyebrow mb-4 text-emerald">
               <span aria-hidden="true" className="inline-block h-px w-5 bg-current" />
               {HELP_BLOCK.eyebrow}
             </p>
             <h2 className="text-[clamp(1.625rem,4vw,2.5rem)]">{HELP_BLOCK.title}</h2>
-            <p className="mt-4 max-w-[46ch] text-[1.0625rem] leading-relaxed text-ink-muted">
+            <p className="mt-4 max-w-[46ch] text-[1.0625rem] leading-relaxed text-text-muted">
               {HELP_BLOCK.text}
             </p>
           </div>
@@ -88,7 +88,7 @@ export function HelpChoose() {
               <Button type="submit" size="lg" block>
                 {HELP_BLOCK.submit}
               </Button>
-              <p className="mt-3 text-sm text-ink-muted">
+              <p className="mt-3 text-sm text-text-muted">
                 Откроется переписка в WhatsApp с уже заполненным вопросом. Данные
                 никуда не отправляются, пока вы не нажмёте «Отправить» в мессенджере.
               </p>

@@ -13,7 +13,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="texture-kraft bg-kraft-dark text-ink-light on-dark">
+    <footer className="bg-emerald text-ivory-light on-dark">
       <div className="container-page py-14 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
           {/* Бренд и контакты */}
@@ -22,7 +22,7 @@ export function Footer() {
 
             <a
               href={COMPANY.phone.href}
-              className="mt-6 block font-display text-3xl text-champagne-light underline-offset-4 hover:underline"
+              className="mt-6 block font-display text-3xl text-ivory underline-offset-4 hover:underline"
             >
               {COMPANY.phone.display}
             </a>
@@ -31,14 +31,14 @@ export function Footer() {
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-ink-light/80 underline-offset-4 hover:underline"
+              className="mt-2 inline-block text-white/80 underline-offset-4 hover:underline"
             >
               Написать в WhatsApp
             </Link>
 
             <div className="rule-gold mt-8 mb-6" />
 
-            <p className="text-sm text-ink-light/70">
+            <p className="text-sm text-white/70">
               {COMPANY.delivery.city}. Оптовая отправка:{" "}
               {COMPANY.delivery.regions.join(", ")}.
             </p>
@@ -56,7 +56,7 @@ export function Footer() {
                     <li key={item.href + item.label}>
                       <Link
                         href={item.href}
-                        className="text-ink-light/80 underline-offset-4 transition-colors hover:text-champagne-light hover:underline"
+                        className="text-white/80 underline-offset-4 transition-colors hover:text-ivory hover:underline"
                       >
                         {item.label}
                       </Link>
@@ -75,10 +75,10 @@ export function Footer() {
           {STORES.map((store) => (
             <div key={store.id}>
               <p className="font-semibold">{store.name}</p>
-              <p className="mt-1 text-sm text-ink-light/70">
+              <p className="mt-1 text-sm text-white/70">
                 {store.city}, {store.address}
               </p>
-              <p className="text-sm text-champagne-light">{store.hours}</p>
+              <p className="text-sm text-ivory">{store.hours}</p>
             </div>
           ))}
         </div>
@@ -103,7 +103,7 @@ export function Footer() {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex min-h-9 items-center rounded-[var(--radius-button)] border border-ink-light/25 px-3 text-sm text-ink-light/85 transition-colors hover:border-gold-light hover:text-champagne-light"
+                        className="inline-flex min-h-9 items-center rounded-[var(--radius-button)] border border-white/25 px-3 text-sm text-white/85 transition-colors hover:border-gold-light hover:text-ivory"
                       >
                         {social.label}
                       </a>
@@ -117,7 +117,7 @@ export function Footer() {
 
         <div className="rule-gold my-10" />
 
-        <div className="flex flex-col gap-3 text-sm text-ink-light/60 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
           <p>
             © {year} {COMPANY.name}
           </p>

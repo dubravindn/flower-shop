@@ -12,7 +12,7 @@ export interface FoundersSectionProps {
   ratio: FounderRatio;
   alt: string;
   /** Фон блока */
-  tone?: "burgundy" | "paper" | "kraft";
+  tone?: "emerald" | "ivory" | "white";
   /** С какой стороны фотография на широком экране */
   imageSide?: "left" | "right";
   /** Подпись под фотографией — например, имена владельцев */
@@ -22,9 +22,9 @@ export interface FoundersSectionProps {
 }
 
 const TONES = {
-  burgundy: "bg-burgundy text-ink-light on-dark",
-  paper: "texture-kraft bg-champagne-light/70 text-ink",
-  kraft: "texture-kraft bg-kraft/25 text-ink",
+  emerald: "bg-emerald text-ivory-light on-dark",
+  ivory: "texture-warm bg-ivory text-text",
+  white: "bg-white text-text",
 } as const;
 
 /**
@@ -38,7 +38,7 @@ export function FoundersSection({
   cta,
   ratio,
   alt,
-  tone = "kraft",
+  tone = "ivory",
   imageSide = "right",
   caption,
   priority = false,
@@ -78,7 +78,7 @@ export function FoundersSection({
               <ButtonLink
                 href={cta.href}
                 size="lg"
-                onRed={tone === "burgundy"}
+                onRed={tone === "emerald"}
                 className="mt-8"
               >
                 {cta.label}
@@ -91,7 +91,7 @@ export function FoundersSection({
             {/* Без рамки: пока фотография грузится, пустой контур читается
                 как незагруженный блок. Крафтовая подложка того же размера
                 держит место и остаётся материалом, а не «дыркой». */}
-            <div className="texture-kraft relative overflow-hidden bg-kraft/25">
+            <div className="texture-warm relative overflow-hidden bg-gold/25">
               <Img
                 src={image.src}
                 alt={image.alt}
