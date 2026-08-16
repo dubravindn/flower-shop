@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="on-dark bg-burgundy py-24 text-paper md:py-36">
+    <section className="on-dark bg-emerald py-24 text-ivory-light md:py-36">
       <div className="container-page text-center">
         <p className="font-display text-[clamp(4rem,14vw,9rem)] leading-none text-gold-light">
           404
@@ -19,7 +19,7 @@ export default function NotFound() {
           Такой страницы у нас нет
         </h1>
 
-        <p className="mx-auto mt-4 max-w-[46ch] text-champagne-light">
+        <p className="mx-auto mt-4 max-w-[46ch] text-ivory">
           Возможно, ссылка устарела. Загляните в каталог или напишите — подскажем,
           что есть в наличии сегодня.
         </p>

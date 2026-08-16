@@ -1,60 +1,77 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import { COMPANY } from "@/config/company";
-import { Monogram, MonogramMicro } from "@/components/brand/Monogram";
-
-export { Monogram, MonogramMicro };
 
 /**
- * Три официальные компоновки логотипа.
+ * Логотип «Цветы Дубравиных».
  *
- * horizontal — монограмма слева, полное название справа в две строки.
- *              Основная версия: шапка, вывеска, документы, фургон.
- * vertical   — монограмма сверху, название под ней. Упаковка и соцсети.
- * mark       — только монограмма. Favicon, аватар, печать, мелкие элементы.
+ * Основное название набирается антиквой, дескриптор «Цветочная база» —
+ * мелкой строкой с разрядкой. Латинское «CBD» не используется нигде:
+ * аббревиатура даёт неверные ассоциации.
  *
- * Монограмма нигде не заменяет полное название: сокращать «Цветочная База
- * Дубравиных» до «ЦБД» в интерфейсе нельзя.
+ * Знак — тонкая золотая рамка с инициалом: до утверждения фирменного
+ * дуба она держит место и не спорит с названием.
  */
+
+export function LogoMark({
+  className,
+  tone = "emerald",
+}: {
+  className?: string;
+  tone?: "emerald" | "light";
+}) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        "grid aspect-square place-items-center rounded-[10px] border font-display leading-none",
+        tone === "light"
+          ? "border-gold-light/60 bg-transparent text-gold-light"
+          : "border-gold/60 bg-emerald text-gold-light",
+        className,
+      )}
+    >
+      <span className="translate-y-[0.03em]">Д</span>
+    </span>
+  );
+}
+
 export function Logo({
   variant = "horizontal",
-  tone = "ink",
+  tone = "emerald",
   className,
   asLink = true,
 }: {
   variant?: "horizontal" | "vertical" | "mark";
-  /** ink — тёмный текст на светлом, light — светлый на тёмном */
-  tone?: "ink" | "light";
+  tone?: "emerald" | "light";
   className?: string;
   asLink?: boolean;
 }) {
-  const nameColor = tone === "light" ? "text-ink-light" : "text-ink";
-  const markColor = tone === "light" ? "text-gold-light" : "text-burgundy";
+  const nameColor = tone === "light" ? "text-ivory-light" : "text-emerald";
+  const descriptorColor = tone === "light" ? "text-gold-light" : "text-gold-dark";
 
   const inner = (
     <>
-      <Monogram
-        concept="architect"
-        title=""
-        className={cn(
-          markColor,
-          variant === "vertical" ? "h-10 w-auto" : "h-7 w-auto sm:h-8",
-        )}
-      />
+      <LogoMark tone={tone} className="size-10 text-lg" />
 
       {variant !== "mark" && (
-        <span
-          className={cn(
-            "font-display leading-[1.15] tracking-tight",
-            nameColor,
-            variant === "vertical"
-              ? "mt-3 text-center text-lg"
-              : "text-[0.9375rem] sm:text-base",
-          )}
-        >
-          Цветочная База
-          <br />
-          Дубравиных
+        <span className={cn(variant === "vertical" ? "mt-2 text-center" : "")}>
+          <span
+            className={cn(
+              "block font-sans text-[0.5625rem] tracking-[0.22em] uppercase",
+              descriptorColor,
+            )}
+          >
+            {COMPANY.descriptor}
+          </span>
+          <span
+            className={cn(
+              "block font-display text-[1.0625rem] leading-tight tracking-tight sm:text-lg",
+              nameColor,
+            )}
+          >
+            {COMPANY.name}
+          </span>
         </span>
       )}
     </>

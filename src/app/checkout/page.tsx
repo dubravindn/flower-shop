@@ -6,7 +6,7 @@ import { whatsappLink } from "@/config/company";
 
 export const metadata: Metadata = {
   title: "Оформление заказа",
-  description: "Оформление заказа в Цветочной Базе Дубравиных.",
+  description: "Оформление заказа в Цветах Дубравиных.",
   alternates: { canonical: "/checkout" },
   robots: { index: false, follow: true },
 };

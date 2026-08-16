@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   return {
     title: `${found.title} с доставкой в Кирове`,
-    description: `${found.title}: ${found.caption.toLowerCase()}. Доставка за 2 часа по Кирову, фото букета перед отправкой. Цветочная База Дубравиных.`,
+    description: `${found.title}: ${found.caption.toLowerCase()}. Доставка за 2 часа по Кирову, фото букета перед отправкой. Цветы Дубравиных.`,
     alternates: { canonical: `/catalog/${found.slug}` },
   };
 }

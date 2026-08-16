@@ -12,41 +12,45 @@
    ========================================================================== */
 
 @theme {
-  /* --- Бургунди: спелая вишня, акцент --- */
-  --color-burgundy: #741c2c;
-  --color-burgundy-dark: #53121e;
-  --color-burgundy-light: #96364a;
-  --color-burgundy-muted: #87505a;
+  /* --- Изумруд: основной фирменный цвет --- */
+  --color-emerald: #07362d;
+  --color-emerald-dark: #002d27;
+  --color-emerald-hover: #0b493d;
 
-  /* --- Шампань и тёплая бумага: основные светлые поверхности --- */
-  --color-paper: #f2e9db;
-  --color-champagne-light: #e4d5bf;
-  --color-champagne: #d1b891;
+  /* --- Золото: цены, тонкие линии, небольшие акценты --- */
+  --color-gold: #c6a15b;
+  --color-gold-light: #d9c08c;
+  --color-gold-dark: #9c7638;
 
-  /* --- Крафт: натуральная плотная бумага --- */
-  --color-kraft: #a98257;
-  --color-kraft-dark: #765737;
+  /* --- Светлые поверхности: основа всего сайта --- */
+  --color-ivory: #f2ede0;
+  --color-ivory-light: #faf7f0;
+  --color-white: #ffffff;
 
-  /* --- Золото: только линии, мелкие детали и подписи --- */
-  --color-gold: #b6924e;
-  --color-gold-light: #ccad6c;
+  /* --- Бордовый: только редкие эмоциональные акценты --- */
+  --color-burgundy: #5c1726;
 
   /* --- Текст --- */
-  --color-graphite: #292321;
-  --color-ink: #332a26;
-  --color-ink-muted: #6b5a50;
-  --color-ink-light: #f3e9da;
+  --color-text: #211518;
+  --color-text-muted: #6f675e;
+
+  /* --- Границы --- */
+  --color-line: rgba(198, 161, 91, 0.45);
 
   /* --- Типографика --- */
   --font-display: var(--font-prata), "Times New Roman", serif;
   --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
 
-  /* --- Геометрия: карточки 0–8px, кнопки 4–6px --- */
-  --radius-card: 4px;
-  --radius-button: 5px;
+  /* --- Геометрия: спокойные скругления --- */
+  --radius-card: 18px;
+  --radius-button: 12px;
 
   --spacing-section: 4.5rem;
   --spacing-section-lg: 7rem;
+
+  /* --- Тени: мягкие, естественные --- */
+  --shadow-card: 0 1px 2px rgba(0, 45, 39, 0.06), 0 12px 28px rgba(0, 45, 39, 0.08);
+  --shadow-card-hover: 0 2px 6px rgba(0, 45, 39, 0.08), 0 22px 44px rgba(0, 45, 39, 0.12);
 }
 
 /* ============================================================================
@@ -61,8 +65,8 @@
   }
 
   body {
-    background-color: var(--color-paper);
-    color: var(--color-ink);
+    background-color: var(--color-ivory-light);
+    color: var(--color-text);
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.6;
@@ -85,23 +89,25 @@
   h2 {
     font-family: var(--font-display);
     font-weight: 400;
+    color: var(--color-emerald);
   }
 
   h3 {
     font-family: var(--font-sans);
     font-weight: 600;
     letter-spacing: -0.005em;
+    color: var(--color-emerald);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-gold-dark);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
-    background: var(--color-burgundy);
-    color: var(--color-ink-light);
+    background: var(--color-emerald);
+    color: var(--color-ivory-light);
   }
 }
 
@@ -129,15 +135,15 @@
  * повторяется тайлом и почти прозрачен: даёт материальность поверхности,
  * не мешая тексту и фотографиям. Растровых текстур нет — вес нулевой.
  */
-@utility texture-kraft {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+@utility texture-warm {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
 /** Тонкая золотая линия — единственный «металлический» приём. */
 @utility rule-gold {
   height: 1px;
-  background: color-mix(in srgb, var(--color-gold) 60%, transparent);
+  background: var(--color-line);
 }
 
 @utility eyebrow {
@@ -148,6 +154,17 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/** Карточка: белый фон, тонкая золотая рамка, мягкая тень. */
+@utility card-surface {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 220ms ease,
+    transform 220ms ease;
 }
 
 /* Появление секций: 200–400 мс */
@@ -182,5 +199,12 @@
 
 /* Обводка фокуса на тёмных подложках должна быть светлой */
 .on-dark :focus-visible {
-  outline-color: var(--color-champagne-light);
+  outline-color: var(--color-gold-light);
+}
+
+/* На изумрудных подложках заголовки наследуют светлый цвет */
+.on-dark h1,
+.on-dark h2,
+.on-dark h3 {
+  color: inherit;
 }

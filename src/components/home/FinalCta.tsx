@@ -4,13 +4,13 @@ import { whatsappLink } from "@/config/company";
 
 export function FinalCta() {
   return (
-    <section className="on-dark bg-burgundy py-[var(--spacing-section)] text-paper md:py-[var(--spacing-section-lg)]">
+    <section className="on-dark bg-emerald py-[var(--spacing-section)] text-ivory-light md:py-[var(--spacing-section-lg)]">
       <div className="container-page text-center">
         <h2 className="mx-auto max-w-[18ch] text-[clamp(1.875rem,5vw,3.5rem)]">
           {FINAL_CTA.title}
         </h2>
 
-        <p className="mx-auto mt-5 max-w-[48ch] text-[1.0625rem] leading-relaxed text-champagne-light">
+        <p className="mx-auto mt-5 max-w-[48ch] text-[1.0625rem] leading-relaxed text-ivory">
           {FINAL_CTA.text}
         </p>
 

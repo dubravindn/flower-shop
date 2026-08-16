@@ -18,7 +18,7 @@ import { OAK_PALETTE as C, OAK_PALETTE_LIST } from "@/config/oak-palette";
  */
 export const metadata: Metadata = {
   title: "Выбор логотипа",
-  description: "Фирменная система «Цветочная База Дубравиных»: дуб, фамилия и знак ЦБД.",
+  description: "Фирменная система «Цветы Дубравиных»: дуб, фамилия и знак ЦБД.",
   robots: { index: false, follow: false },
 };
 
@@ -39,11 +39,11 @@ const SURFACES = [
 
 function Block({ title, note, children }: { title: string; note?: string; children: React.ReactNode }) {
   return (
-    <section className="border-t border-kraft/30 py-9">
-      <h2 className="font-sans text-xs font-semibold tracking-[0.14em] text-burgundy uppercase">
+    <section className="border-t border-gold/30 py-9">
+      <h2 className="font-sans text-xs font-semibold tracking-[0.14em] text-emerald uppercase">
         {title}
       </h2>
-      {note && <p className="mt-2 max-w-[68ch] text-[0.9375rem] text-ink-muted">{note}</p>}
+      {note && <p className="mt-2 max-w-[68ch] text-[0.9375rem] text-text-muted">{note}</p>}
       <div className="mt-6">{children}</div>
     </section>
   );
@@ -72,17 +72,17 @@ export default function LogoPreviewPage() {
   return (
     <div className="container-page py-12 md:py-16">
       <header className="mb-10 max-w-[70ch]">
-        <p className="eyebrow mb-4 text-kraft-dark">
+        <p className="eyebrow mb-4 text-emerald-dark">
           <span aria-hidden="true" className="inline-block h-px w-6 bg-gold" />
           Рабочий материал
         </p>
         <h1 className="text-[clamp(2rem,5vw,3rem)]">Фирменная система: дуб и фамилия</h1>
-        <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink-muted">
+        <p className="mt-4 text-[1.0625rem] leading-relaxed text-text-muted">
           Главный элемент — фамилия <strong>ДУБ</strong>равиных. Дуб работает
           знаком и фоновой гравюрой, «ЦБД» осталась, но как подпись бренда:
           она нигде не крупнее фамилии и не спорит с ней.
         </p>
-        <p className="mt-3 text-[1.0625rem] leading-relaxed text-ink-muted">
+        <p className="mt-3 text-[1.0625rem] leading-relaxed text-text-muted">
           Логотип на самом сайте пока не заменён — там работает прежний знак.
         </p>
       </header>
@@ -137,7 +137,7 @@ export default function LogoPreviewPage() {
               <Panel bg={s.bg} className="h-32">
                 <OakLogo tone={s.tone} size="sm" />
               </Panel>
-              <p className="mt-1.5 text-xs text-ink-muted">{s.label}</p>
+              <p className="mt-1.5 text-xs text-text-muted">{s.label}</p>
             </div>
           ))}
         </div>
@@ -156,7 +156,7 @@ export default function LogoPreviewPage() {
               <div className="flex h-32 items-end justify-center">
                 <OakMicro style={{ height: s, width: "auto", color: C.museumBlack }} />
               </div>
-              <p className="mt-1 text-[11px] text-ink-muted">{s} px · micro</p>
+              <p className="mt-1 text-[11px] text-text-muted">{s} px · micro</p>
             </div>
           ))}
           {[32, 48].map((s) => (
@@ -164,14 +164,14 @@ export default function LogoPreviewPage() {
               <div className="flex h-32 items-end justify-center">
                 <OakCompact tone={TONE_LIGHT} height={s} />
               </div>
-              <p className="mt-1 text-[11px] text-ink-muted">{s} px · compact</p>
+              <p className="mt-1 text-[11px] text-text-muted">{s} px · compact</p>
             </div>
           ))}
           <div className="text-center">
             <div className="flex h-32 items-end justify-center">
               <Oak style={{ height: 128, width: "auto", color: C.museumBlack }} />
             </div>
-            <p className="mt-1 text-[11px] text-ink-muted">128 px</p>
+            <p className="mt-1 text-[11px] text-text-muted">128 px</p>
           </div>
         </div>
       </Block>
@@ -240,21 +240,21 @@ export default function LogoPreviewPage() {
       <Block title="Палитра из референса">
         <ul className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {OAK_PALETTE_LIST.map((c) => (
-            <li key={c.name} className="border border-kraft/25">
+            <li key={c.name} className="border border-gold/25">
               <span className="block h-12" style={{ background: c.hex }} />
               <span className="block p-2.5">
                 <span className="block text-sm font-semibold">{c.name}</span>
-                <span className="block text-xs text-ink-muted">{c.hex}</span>
-                <span className="mt-0.5 block text-[11px] text-ink-muted">{c.role}</span>
+                <span className="block text-xs text-text-muted">{c.hex}</span>
+                <span className="mt-0.5 block text-[11px] text-text-muted">{c.role}</span>
               </span>
             </li>
           ))}
         </ul>
       </Block>
 
-      <footer className="border-t border-kraft/30 pt-6">
+      <footer className="border-t border-gold/30 pt-6">
         <h2 className="text-xl">Что заменим после утверждения</h2>
-        <ul className="mt-3 max-w-[64ch] list-disc space-y-2 pl-5 text-ink-muted">
+        <ul className="mt-3 max-w-[64ch] list-disc space-y-2 pl-5 text-text-muted">
           <li>Знак в шапке и подвале сайта.</li>
           <li>favicon 16/32/48, Apple Touch Icon, иконки PWA и maskable.</li>
           <li>Аватар 1080×1080 и обложку Open Graph.</li>
@@ -282,7 +282,7 @@ function Carrier({
       >
         {children}
       </div>
-      <figcaption className="mt-1.5 text-xs text-ink-muted">{label}</figcaption>
+      <figcaption className="mt-1.5 text-xs text-text-muted">{label}</figcaption>
     </figure>
   );
 }

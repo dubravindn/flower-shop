@@ -41,8 +41,8 @@ export function CatalogFilters({ category }: { category?: string }) {
     cn(
       "inline-flex min-h-11 items-center rounded-[var(--radius-button)] border px-4 text-sm font-semibold transition-colors",
       active
-        ? "border-burgundy bg-burgundy text-ink-light"
-        : "border-kraft/40 text-ink hover:border-burgundy hover:text-burgundy",
+        ? "border-emerald bg-emerald text-white"
+        : "border-gold/40 text-text hover:border-emerald hover:text-emerald",
     );
 
   const base = category ? `/catalog/${category}` : "/catalog";
@@ -51,7 +51,7 @@ export function CatalogFilters({ category }: { category?: string }) {
   return (
     <>
       <div className="mb-4">
-        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
+        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-text-muted uppercase">
           Категория
         </h2>
         <div className="flex flex-wrap gap-2">
@@ -71,7 +71,7 @@ export function CatalogFilters({ category }: { category?: string }) {
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-ink-muted uppercase">
+        <h2 className="mb-3 font-sans text-xs font-semibold tracking-[0.12em] text-text-muted uppercase">
           Повод
         </h2>
         <div className="flex flex-wrap gap-2">

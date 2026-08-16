@@ -6,7 +6,7 @@ import { LEGAL_NOTE, UPDATED_AT } from "@/content/legal";
 export const metadata: Metadata = {
   title: "Политика конфиденциальности",
   description:
-    "Политика обработки персональных данных Цветочной Базы Дубравиных: какие данные собираются, зачем и как их удалить.",
+    "Политика обработки персональных данных Цветов Дубравиных: какие данные собираются, зачем и как их удалить.",
   alternates: { canonical: "/privacy" },
   // Документ не прошёл юридическую проверку и не содержит реквизитов:
   // до этого он не должен попадать в поиск.
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
       />
 
       <Prose>
-        <p className="rounded-[var(--radius-card)] border border-burgundy/30 bg-burgundy/5 p-4 text-sm">
+        <p className="rounded-[var(--radius-card)] border border-emerald/30 bg-emerald/5 p-4 text-sm">
           {LEGAL_NOTE}
         </p>
 

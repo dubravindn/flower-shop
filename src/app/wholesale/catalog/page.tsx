@@ -7,7 +7,7 @@ import { whatsappLink } from "@/config/company";
 export const metadata: Metadata = {
   title: "Оптовые остатки",
   description:
-    "Актуальные остатки цветочной базы для оптовых клиентов. Цветочная База Дубравиных, Киров.",
+    "Актуальные остатки цветочной базы для оптовых клиентов. Цветы Дубравиных, Киров.",
   alternates: { canonical: "/wholesale/catalog" },
   robots: { index: false, follow: true },
 };

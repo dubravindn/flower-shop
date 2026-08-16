@@ -12,19 +12,19 @@ import { whatsappLink } from "@/config/company";
  */
 export function Hero() {
   return (
-    <section className="texture-kraft relative overflow-hidden bg-paper">
+    <section className="texture-warm relative overflow-hidden bg-ivory-light">
       <div className="container-page grid items-center gap-10 py-12 md:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:py-20">
         <div>
-          <p className="eyebrow mb-5 text-kraft-dark">
+          <p className="eyebrow mb-5 text-emerald-dark">
             <span aria-hidden="true" className="inline-block h-px w-7 bg-gold" />
             Семейная цветочная база в Кирове
           </p>
 
-          <h1 className="max-w-[15ch] text-[clamp(2.25rem,6.2vw,4.25rem)] text-ink">
+          <h1 className="max-w-[15ch] text-[clamp(2.25rem,6.2vw,4.25rem)] text-text">
             {HERO.title}
           </h1>
 
-          <p className="mt-6 max-w-[44ch] text-[1.0625rem] leading-relaxed text-ink-muted md:text-lg">
+          <p className="mt-6 max-w-[44ch] text-[1.0625rem] leading-relaxed text-text-muted md:text-lg">
             {HERO.text}
           </p>
 
@@ -43,7 +43,7 @@ export function Hero() {
 
           <div className="rule-gold mt-10 max-w-md" />
 
-          <ul className="mt-5 grid max-w-md gap-x-8 gap-y-2.5 text-[0.9375rem] text-ink-muted sm:grid-cols-2">
+          <ul className="mt-5 grid max-w-md gap-x-8 gap-y-2.5 text-[0.9375rem] text-text-muted sm:grid-cols-2">
             {HERO.facts.map((fact) => (
               <li key={fact} className="flex items-start gap-2.5">
                 <span
@@ -60,9 +60,9 @@ export function Hero() {
         <div className="relative">
           <div
             aria-hidden="true"
-            className="absolute -top-4 -right-4 hidden h-full w-full bg-kraft/25 lg:block"
+            className="absolute -top-4 -right-4 hidden h-full w-full bg-gold/25 lg:block"
           />
-          <div className="relative aspect-4/5 overflow-hidden border border-kraft/35 sm:aspect-3/2 lg:aspect-4/5">
+          <div className="relative aspect-4/5 overflow-hidden border border-gold/35 sm:aspect-3/2 lg:aspect-4/5">
             <Img
               src="/images/works/buket-nezhnyy-rozovyy.jpg"
               alt="Авторский букет из белой хризантемы, роз и альстромерии"

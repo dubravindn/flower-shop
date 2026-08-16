@@ -164,7 +164,7 @@ export const CONCEPTS: Record<MonogramConcept, ConceptMeta & { d: string }> = {
 export function Monogram({
   concept = "architect",
   className,
-  title = "Цветочная База Дубравиных",
+  title = "Цветы Дубравиных",
 }: {
   concept?: MonogramConcept;
   className?: string;

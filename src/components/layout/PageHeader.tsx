@@ -14,28 +14,28 @@ export function PageHeader({
   crumbs = [],
   title,
   text,
-  tone = "paper",
+  tone = "ivory",
   children,
 }: {
   crumbs?: Crumb[];
   title: string;
   text?: string;
-  tone?: "paper" | "champagne";
+  tone?: "ivory" | "emerald";
   children?: React.ReactNode;
 }) {
   return (
     <header
       className={cn(
-        "border-b border-graphite/12 py-10 md:py-14",
-        tone === "champagne" ? "bg-champagne" : "bg-champagne-light",
+        "border-b border-gold/35 py-10 md:py-14",
+        tone === "emerald" ? "bg-emerald text-ivory-light on-dark" : "texture-warm bg-ivory text-text",
       )}
     >
       <div className="container-page">
         {crumbs.length > 0 && (
           <nav aria-label="Хлебные крошки" className="mb-5">
-            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-text-muted">
               <li>
-                <Link href="/" className="underline-offset-4 hover:text-burgundy hover:underline">
+                <Link href="/" className="underline-offset-4 hover:text-emerald hover:underline">
                   Главная
                 </Link>
               </li>
@@ -47,12 +47,12 @@ export function PageHeader({
                   {crumb.href ? (
                     <Link
                       href={crumb.href}
-                      className="underline-offset-4 hover:text-burgundy hover:underline"
+                      className="underline-offset-4 hover:text-emerald hover:underline"
                     >
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span aria-current="page" className="text-graphite">
+                    <span aria-current="page" className="text-text">
                       {crumb.label}
                     </span>
                   )}
@@ -65,7 +65,7 @@ export function PageHeader({
         <h1 className="max-w-[20ch] text-[clamp(2rem,5.5vw,3.5rem)]">{title}</h1>
 
         {text && (
-          <p className="mt-4 max-w-[62ch] text-[1.0625rem] leading-relaxed text-ink-muted">
+          <p className="mt-4 max-w-[62ch] text-[1.0625rem] leading-relaxed text-text-muted">
             {text}
           </p>
         )}
@@ -87,7 +87,7 @@ export function Prose({ children }: { children: React.ReactNode }) {
           "[&_h3]:mt-8 [&_h3]:font-sans [&_h3]:text-lg [&_h3]:font-semibold",
           "[&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5",
           "[&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-5",
-          "[&_a]:text-burgundy [&_a]:underline [&_a]:underline-offset-4",
+          "[&_a]:text-emerald [&_a]:underline [&_a]:underline-offset-4",
         )}
       >
         {children}

@@ -12,10 +12,10 @@ import { DATES_TEASER } from "@/content/home";
  */
 export function DatesTeaser() {
   return (
-    <section className="texture-kraft bg-kraft/18 py-[var(--spacing-section)] md:py-[var(--spacing-section-lg)]">
+    <section className="texture-warm bg-gold/18 py-[var(--spacing-section)] md:py-[var(--spacing-section-lg)]">
       <div className="container-page">
         <div className="max-w-[62ch]">
-          <p className="eyebrow mb-4 text-kraft-dark">
+          <p className="eyebrow mb-4 text-emerald-dark">
             <span aria-hidden="true" className="inline-block h-px w-6 bg-gold" />
             {DATES_TEASER.eyebrow}
           </p>
@@ -24,7 +24,7 @@ export function DatesTeaser() {
             {DATES_TEASER.title}
           </h2>
 
-          <p className="mt-5 text-[1.0625rem] leading-relaxed text-ink-muted">
+          <p className="mt-5 text-[1.0625rem] leading-relaxed text-text-muted">
             {DATES_TEASER.text}
           </p>
 
